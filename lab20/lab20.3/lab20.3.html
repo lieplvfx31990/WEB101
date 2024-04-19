@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" />
+    <link rel="icon" type="image/x-icon" href="./icons/favicon.png" />
+    <link rel="stylesheet" href="./css/lab20.3.css" />
+    <title>lab 20.3. game đoán số</title>
+  </head>
+  <body>
+    <header>
+      <p class="htitle">Lab20.3</p>
+      <div class="hcontent">
+        <p style="margin-bottom: 1rem">
+          Tạo tính năng "chơi lại" cho trò chơi, để người chơi có thể đưa ra các
+          dự đoán mới trong
+          <a
+            href="https://docs.google.com/document/d/1s_Da4w-FzTPGmkGADMWvbBYOK8SluLdm/edit"
+            target="_blank"
+            ><b>Lab 19.1. Project đoán số</b></a
+          >.
+        </p>
+        <ol>
+          <li style="margin-left: 1rem">
+            <b>Nhiệm vụ của bạn:</b>
+            <ul>
+              <li style="margin: 0.5rem">
+                Chọn phần tử với class "again" và đưa thêm vào một click event
+                handler.
+              </li>
+              <li style="margin: 0.5rem">
+                Trong handle function, khôi phục các giá trị khởi tạo của 2 biến
+                'score' và 'secretNumber'.
+              </li>
+              <li style="margin: 0.5rem">
+                Khôi phục các điều kiện khởi tạo khác của các mesage, number,
+                score, guess và các trường input khác.
+              </li>
+              <li style="margin: 0.5rem">
+                Khôi phục màu background ban đầu (#222) và chiều rộng của number
+                (15rem).
+              </li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </header>
+    <main>
+      <p class="htitle">Thực hành</p>
+      <br />
+      <div class="game">
+        <section class="g-header">
+          <h1>Guess My Number!</h1>
+          <p class="between">(Between 1 and 20)</p>
+          <button class="btn again">Again!</button>
+          <div class="number">?</div>
+        </section>
+        <section class="g-body">
+          <div class="left">
+            <input type="number" class="guess" />
+            <button class="btn check">Check!</button>
+          </div>
+          <div class="right">
+            <p class="message">Start guessing...</p>
+            <p class="label-score">💯 Score: <span class="score">20</span></p>
+            <p class="label-highscore">
+              🥇 Highscore: <span class="highscore">0</span>
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script src="./js/lab20.3.js"></script>
+  </body>
+</html>

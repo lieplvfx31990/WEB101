@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" type="image/x-icon" href="./icons/favicon.png" />
+    <link rel="stylesheet" href="./css/lab20.2.css" />
+    <title>lab20.2.Gieo xúc xắc</title>
+  </head>
+  <body>
+    <header>
+      <p class="htitle">Lab20.2</p>
+      <div class="hcontent">
+        <p>
+          Viết lại toàn bộ phần code cho project
+          <a
+            href="https://docs.google.com/document/d/1JXqgPLzE0Cpx90zUtEjnMrEYr9OJ-ZSO/edit"
+            target="_blank"
+            >gieo xúc xắc</a
+          >
+        </p>
+      </div>
+    </header>
+    <main>
+      <p class="htitle">Thực hành</p>
+      <br />
+      <div class="game">
+        <div class="game-layout">
+          <section class="player player--0 player--active">
+            <h2 class="name" id="name--0">Player 1</h2>
+            <p class="score" id="score--0">43</p>
+            <div class="cup cup--0">
+              <p class="cup--icon">🎉</p>
+              <p class="cup--text">YOU WON!</p>
+            </div>
+
+            <div class="current">
+              <p class="current-label">Current</p>
+              <p class="current-score" id="current--0">0</p>
+            </div>
+          </section>
+          <section class="player player--1">
+            <h2 class="name" id="name--1">Player 2</h2>
+            <p class="score" id="score--1">24</p>
+            <div class="cup cup--1">
+              <p class="cup--icon">🎉</p>
+              <p class="cup--text">YOU WON!</p>
+            </div>
+            <div class="current">
+              <p class="current-label">Current</p>
+              <p class="current-score" id="current--1">0</p>
+            </div>
+          </section>
+
+          <img
+            src="./images/dices/dice-5.png"
+            alt="Playing dice"
+            class="dice"
+          />
+          <button class="btn btn--new">🔄 New game</button>
+          <button class="btn btn--roll">🎲 Roll dice</button>
+          <button class="btn btn--hold">📥 Hold</button>
+        </div>
+      </div>
+    </main>
+    <script src="js/lab20.2.js"></script>
+  </body>
+</html>
