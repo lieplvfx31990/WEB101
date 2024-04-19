@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="vn">
+  <head>
+    <title>lab17.7.1 which team won? (part 2)</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./icons/favicon.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/lab17.7.js"></script>
+  </head>
+  <body>
+    <div class="container my-3">
+      <h3>Bài toán tổng hợp #3</h3>
+      <h4>Lab17.7.1</h4>
+      <div
+        class="container my-3 py-3 px-3"
+        style="background-color: aquamarine"
+      >
+        <p style="font-size: larger; font-weight: bolder">
+          Đội nào chiến thắng? (phần 2)
+        </p>
+        <p>
+          Quay trở lại với hai đội thể dục dụng cụ: Dolphins và Koalas! Có một
+          qui tắc mới cho môn thẻ dục này, có cơ chế khác hẳn. Mỗi đội thi đấu 3
+          lần, sau đó tính trung bình 3 lượt điểm số (điểm trung bình mỗi đội).
+          Một đội sẽ giành chiến thắng chi khi có số điểm trung bình ít nhất gấp
+          đôi so với điểm của đội còn lại. Nếu không sẽ không có đội nào thắng
+          cả!
+        </p>
+        <ol>
+          <li class="mb-3">
+            <strong>Nhiệm vụ của bạn:</strong>
+            <ul>
+              <li class="mb-1">
+                Tạo hàm mũi tên 'calcAverage' để tính trung bình của 3 điểm số.
+              </li>
+              <li class="mb-1">
+                Sử dụng hàm để tính trung bình của cả hai đội.
+              </li>
+              <li class="mb-1">
+                Tạo hàm 'checkWinner' nhận điểm trung bình của mỗi đội làm tham
+                số ('avgDolphins' và 'avgKoalas'), sau đó in đội thắng ra
+                console cùng với số điểm giành chiến thắng theo luật trên. Ví
+                dụ: "Koalas win (30 vs. 13)".
+              </li>
+              <li class="mb-1">
+                Dùng hàm 'checkWinner' để xác định đội chiến thắng cho cả Dữ
+                liệu 1 và Dữ liệu 2.
+              </li>
+              <li class="mb-1">Lần này hãy bỏ qua việc hòa.</li>
+            </ul>
+          </li>
+          <li class="mb-3">
+            <strong>Dữ liệu kiểm tra:</strong>
+            <ul>
+              <li class="mb-1">
+                Dữ liệu 1: Dolphins ghi được 44, 23 và 71 điểm. Koalas ghi được
+                65, 54 và 49 điểm.
+              </li>
+              <li class="mb-1">
+                Dữ liệu 2: Dolphins ghi được 85, 54 và 41 điểm. Koalas ghi được
+                23, 34 và 27 điểm.
+              </li>
+            </ul>
+          </li>
+        </ol>
+        <ol style="list-style: none" class="mb-1">
+          <strong>Gợi ý:</strong>
+          <ul>
+            <li class="mb-1">
+              Để tính trung bình 3 giá trị, hãy cộng tất cả chúng lại và chia
+              cho 3.
+            </li>
+            <li class="mb-1">
+              Để kiểm tra xem số A ít nhất có gấp đôi số B không, hãy thử A >=
+              (2*B). Áp dụng điều này cho điểm trung bình của đội.
+            </li>
+          </ul>
+        </ol>
+      </div>
+      <h3>Thực hành</h3>
+      <div
+        class="container my-3 py-3 px-3"
+        style="background-color: rgb(218, 218, 218)"
+      >
+        <p style="font-size: larger; font-weight: bolder">Find the winner.</p>
+        <div
+          class="container my-3 py-1 bg-white"
+          style="border-left: solid 4px cyan; font-size: small"
+        >
+          <p>
+            <span style="color: green"
+              >// The function that computes the average value of elements in an
+              array</span
+            ><br />
+            <span style="color: blue">const</span> calcAverage = (myArr) => {<br />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: blue"
+              >if</span
+            >
+            (myArr <span style="color: deeppink">instanceof</span>
+            <span style="color: blue">Array</span>) {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: blue"
+              >let</span
+            >
+            retv = 0;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: green"
+              >// The variable holds the returned value</span
+            ><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: blue"
+              >let</span
+            >
+            aLen = myArr.<span style="color: blue">length</span
+            >;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: green"
+              >// The length of the array myArr</span
+            ><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: blue"
+              >for</span
+            >
+            (<span style="color: blue">let</span> i =
+            <span style="color: red">0</span>; i < aLen; i++) {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;retv
+            += myArr[i];<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;retv
+            /= aLen;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: blue"
+              >return</span
+            >
+            retv;<br />&nbsp;&nbsp;&nbsp;&nbsp;}
+            <span style="color: blue">else</span>
+            {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: blue"
+              >return (<span style="color: deeppink">typeof</span>
+            </span>
+            myArr == <span style="color: brown">'number'</span>)
+            <span style="color: deeppink">?</span> myArr
+            <span style="color: deeppink">:</span>
+            <span style="color: red">NaN</span
+            >;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />};
+          </p>
+          <p>
+            <span style="color: green"
+              >// Specify the average points of two teams based on provided
+              data.</span
+            ><br />
+            <span style="color: blue">let</span>
+            avgDolphins;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: green"
+              >// The variable holds the value of average point of
+              Dolphins</span
+            ><br />
+            <span style="color: blue">let</span>
+            avgKoalas;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: green"
+              >// The variable holds the value of average point of Koalas</span
+            ><br />
+          </p>
+          <p>
+            <span style="color: green">// DATA 1:</span><br />
+            avgDolphins = calcAverage([<span style="color: red">44</span>,
+            <span style="color: red">23</span>,
+            <span style="color: red">71</span>]);<br />
+            avgKoalas = calcAverage([<span style="color: red">65</span>,
+            <span style="color: red">54</span>,
+            <span style="color: red">49</span>]);<br />
+          </p>
+          <p>
+            <span style="color: green">// DATA 2:</span><br />
+            avgDolphins = calcAverage([<span style="color: red">85</span>,
+            <span style="color: red">54</span>,
+            <span style="color: red">41</span>]);<br />
+            avgKoalas = calcAverage([<span style="color: red">23</span>,
+            <span style="color: red">34</span>,
+            <span style="color: red">27</span>]);<br />
+          </p>
+          <p>
+            <span style="color: green"
+              >// The function that specifies the winner</span
+            ><br />
+            <span style="color: blue">function</span> checkWinner(avgDolphins,
+            avgKoalas) {<br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue"
+              >let</span
+            >
+            retStr;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: green"
+              >// The variable that holds the returned value</span
+            ><br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue">if</span>
+            (avgDolphins >= (<span style="color: red">2</span> * avgKoalas))
+            {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;retStr =
+            <span style="color: orangered"
+              >`Dolphins win (${avgDolphins} vs. ${avgKoalas})`</span
+            >;<br />&nbsp;&nbsp;&nbsp;&nbsp;}
+            <span style="color: blue">else if</span> (avgKoalas >= (<span
+              style="color: red"
+              >2</span
+            >
+            * avgDolphins)) {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;retStr
+            =
+            <span style="color: orangered"
+              >`Koalas win (${avgKoalas} vs. ${avgDolphins})`</span
+            >;<br />&nbsp;&nbsp;&nbsp;&nbsp;}
+            <span style="color: blue">else</span> retStr =
+            <span style="color: orangered">`no winner`</span
+            >;<br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue"
+              >return</span
+            >
+            retStr;<br />}
+          </p>
+          <p>
+            <span style="color: green">// Print the winner to the console</span
+            ><br />
+            <span style="color: blue">let</span> outMsg =
+            checkWinner(avgDolphins, avgKoalas);<br />
+            <span style="color: blue">console</span>.log(outMsg);
+          </p>
+        </div>
+        <p style="font-size: larger; font-weight: bolder">
+          Kiểm tra kết quả
+          <span style="font-size: medium; font-weight: normal"
+            >(Run from the top to the bottom)</span
+          >
+        </p>
+        <table class="table table-bordered">
+          <tr>
+            <th style="width: 20%">
+              <div class="dropdown">
+                <button
+                  type="button"
+                  class="btn btn-primary dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                >
+                  Choose data
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <button id="bdata1" class="dropdown-item" type="button">
+                      Data 1
+                    </button>
+                  </li>
+                  <li>
+                    <button id="bdata2" class="dropdown-item" type="button">
+                      Data 2
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </th>
+            <td style="width: 40%">
+              <p id="dolp_arr">&nbsp;</p>
+            </td>
+            <td style="width: 40%">
+              <p id="koal_arr">&nbsp;</p>
+            </td>
+          </tr>
+          <tr>
+            <th style="width: 20%">
+              <button id="bavrpnt" type="button" class="btn btn-primary">
+                Average points
+              </button>
+            </th>
+            <td style="width: 40%">
+              <p id="dolp_avr">&nbsp;</p>
+            </td>
+            <td style="width: 40%">
+              <p id="koal_avr">&nbsp;</p>
+            </td>
+          </tr>
+        </table>
+        <table class="table table-bordered">
+          <tr>
+            <th style="width: 20%">
+              <button id="bwinner" type="button" class="btn btn-primary">
+                Find the winner
+              </button>
+            </th>
+            <td style="width: 80%; text-align: center">
+              <p id="pwinner">&nbsp;</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <script>
+      const dolp_points1 = [44, 23, 71];
+      const koal_points1 = [65, 54, 49];
+      const dolp_points2 = [85, 54, 41];
+      const koal_points2 = [23, 34, 27];
+      let seldata; // The variable specifies which data is chosen; 1 for data 1, 2 for data 2
+      let avgDolphins; // The variable holds the value of average point of Dolphins
+      let avgKoalas; // The variable holds the value of average point of Koalas
+      const btndata1 = document.querySelector("#bdata1");
+      const btndata2 = document.querySelector("#bdata2");
+      const btnavrpnt = document.querySelector("#bavrpnt");
+      const btnwinner = document.querySelector("#bwinner");
+
+      btndata1.onclick = () => {
+        seldata = 1;
+        document.getElementById(
+          "dolp_arr"
+        ).innerHTML = `Dolphins' points: [${dolp_points1}]`;
+        document.getElementById(
+          "koal_arr"
+        ).innerHTML = `Koalas's points: [${koal_points1}]`;
+        document.getElementById("dolp_avr").innerHTML = " ";
+        document.getElementById("koal_avr").innerHTML = " ";
+        document.getElementById("pwinner").innerHTML = " ";
+      };
+      btndata2.onclick = () => {
+        seldata = 2;
+        document.getElementById(
+          "dolp_arr"
+        ).innerHTML = `Dolphins' points: [${dolp_points2}]`;
+        document.getElementById(
+          "koal_arr"
+        ).innerHTML = `Koalas's points: [${koal_points2}]`;
+        document.getElementById("dolp_avr").innerHTML = " ";
+        document.getElementById("koal_avr").innerHTML = " ";
+        document.getElementById("pwinner").innerHTML = " ";
+      };
+
+      btnavrpnt.onclick = () => {
+        // Specify the average points of two teams based on provided data.
+        if (seldata == 1) {
+          avgDolphins = calcAverage(dolp_points1);
+          avgKoalas = calcAverage(koal_points1);
+        } else if (seldata == 2) {
+          avgDolphins = calcAverage(dolp_points2);
+          avgKoalas = calcAverage(koal_points2);
+        }
+        document.getElementById(
+          "dolp_avr"
+        ).innerHTML = `Dolphins' average point: ${avgDolphins}`;
+        document.getElementById(
+          "koal_avr"
+        ).innerHTML = `Koalas' average point: ${avgKoalas}`;
+      };
+
+      btnwinner.onclick = () => {
+        let outMsg = checkWinner(avgDolphins, avgKoalas);
+        document.getElementById("pwinner").innerHTML = outMsg;
+        console.log(outMsg);
+      };
+    </script>
+  </body>
+</html>

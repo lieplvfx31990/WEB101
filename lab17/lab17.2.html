@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="vn">
+  <head>
+    <title>lab17.2</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./icons/favicon.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/lab17.2.js"></script>
+  </head>
+  <body>
+    <div class="container my-3">
+      <h3>Lab 17.2</h3>
+      <div
+        class="container my-3 py-3 px-3"
+        style="background-color: aquamarine"
+      >
+        <p style="font-size: large; font-weight: bold">
+          Khai báo hàm với biểu thức hàm
+        </p>
+        <ol>
+          <li class="mb-3">
+            Dân số thế giới là 7.9 tỷ người. Tạo <strong>khai báo hàm</strong>
+            'percentageOfWorld1' nhận một giá trị 'population' và trả về phần
+            trăm dân số thế giới theo dân số đã cho. Ví dụ: Trung Quốc có 1.441
+            tỷ người, chiếm 18.2% dân số thế giới.
+          </li>
+          <li class="mb-3">
+            Để tính phần trăm, chia giá trị 'population' đã biết cho 7900000000
+            rồi nhân với 100.
+          </li>
+          <li class="mb-3">
+            Gọi 'percentageOfWorld1' cho 3 dân số của các quốc gia bất kỳ, lưu
+            kết quả vào các biến và in chúng ra console.
+          </li>
+          <li class="mb-3">
+            Tạo <strong>biểu thức hàm</strong> thực hiện điều tương tự, gọi là
+            'percentageOfWorld2' và cũng gọi nó với 3 dân số theo quốc gia (có
+            thể có cùng số dân).
+          </li>
+        </ol>
+      </div>
+      <br />
+      <h3>Thực hành</h3>
+      <br />
+      <p style="font-size: larger; font-weight: bold">Khai báo hàm</p>
+      <div
+        class="container my-3 py-3 px-3"
+        style="background-color: rgb(218, 218, 218)"
+      >
+        <p style="font-size: large; font-weight: bold">Tạo hàm</p>
+        <div
+          class="container my-3 py-1 bg-white"
+          style="border-left: solid 4px cyan"
+        >
+          <p>
+            <span style="color: blue">function</span>
+            percentageOfWorld1(population) {<br />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: darkred"
+              >return</span
+            >
+            (population / <span style="color: red">7900000000</span>) *
+            <span style="color: red">100</span>;<br />}
+          </p>
+          <p>
+            <span style="color: green"
+              >// Vietnam has 100.3 million of people</span
+            ><br />
+            <span style="color: blue">let</span> vie = percentageOfWorld1(<span
+              style="color: red"
+              >100.3</span
+            >
+            * <span style="color: red">1000000</span>);<br />
+          </p>
+          <p>
+            <span style="color: green">// Laos has 7.75 million of people</span
+            ><br />
+            <span style="color: blue">let</span> lao = percentageOfWorld1(<span
+              style="color: red"
+              >7.75</span
+            >
+            * <span style="color: red">1000000</span>);<br />
+          </p>
+          <p>
+            <span style="color: green"
+              >// Cambodia has 17.1 million of people</span
+            ><br />
+            <span style="color: blue">let</span> cam = percentageOfWorld1(<span
+              style="color: red"
+              >17.1</span
+            >
+            * <span style="color: red">1000000</span>);<br />
+          </p>
+          <p>
+            <span style="color: green">// Print the results to the console</span
+            ><br />
+            <span style="color: blue">console</span>.log(vie +
+            <span style="color: brown">"%"</span>);<br />
+            <span style="color: blue">console</span>.log(lao +
+            <span style="color: brown">"%"</span>);<br />
+            <span style="color: blue">console</span>.log(cam +
+            <span style="color: brown">"%"</span>);
+          </p>
+        </div>
+        <p style="font-size: large; font-weight: bold">Kiểm tra kết quả</p>
+        <table class="table table-bordered">
+          <thead>
+            <th>vie</th>
+            <th>lao</th>
+            <th>cam</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="tdvie">&nbsp;</td>
+              <td id="tdlao">&nbsp;</td>
+              <td id="tdcam">&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+        <button id="bf1" type="button" class="btn btn-primary">
+          Run percentageOfWorld1
+        </button>
+      </div>
+      <br />
+      <p style="font-size: larger; font-weight: bold">Biểu thức hàm</p>
+      <div
+        class="container my-3 py-3 px-3"
+        style="background-color: rgb(218, 218, 218)"
+      >
+        <p style="font-size: large; font-weight: bold">Tạo hàm</p>
+        <div
+          class="container my-3 py-1 bg-white"
+          style="border-left: solid 4px cyan"
+        >
+          <p>
+            <span style="color: blue">const</span> percentageOfWorld2 =
+            <span style="color: blue">function</span> (population) {<br />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: darkred"
+              >return</span
+            >
+            (population / <span style="color: red">7900000000</span>) *
+            <span style="color: red">100</span>;<br />};
+          </p>
+          <p>
+            <span style="color: green"
+              >// Vietnam has 100.3 million of people</span
+            ><br />
+            <span style="color: blue">let</span> vie = percentageOfWorld2(<span
+              style="color: red"
+              >100.3</span
+            >
+            * <span style="color: red">1000000</span>);<br />
+          </p>
+          <p>
+            <span style="color: green">// Laos has 7.75 million of people</span
+            ><br />
+            <span style="color: blue">let</span> lao = percentageOfWorld2(<span
+              style="color: red"
+              >7.75</span
+            >
+            * <span style="color: red">1000000</span>);<br />
+          </p>
+          <p>
+            <span style="color: green"
+              >// Cambodia has 17.1 million of people</span
+            ><br />
+            <span style="color: blue">let</span> cam = percentageOfWorld2(<span
+              style="color: red"
+              >17.1</span
+            >
+            * <span style="color: red">1000000</span>);<br />
+          </p>
+          <p>
+            <span style="color: green">// Print the results to the console</span
+            ><br />
+            <span style="color: blue">console</span>.log(vie +
+            <span style="color: brown">"%"</span>);<br />
+            <span style="color: blue">console</span>.log(lao +
+            <span style="color: brown">"%"</span>);<br />
+            <span style="color: blue">console</span>.log(cam +
+            <span style="color: brown">"%"</span>);
+          </p>
+        </div>
+        <p style="font-size: large; font-weight: bold">Kiểm tra kết quả</p>
+        <table class="table table-bordered">
+          <thead>
+            <th>vie</th>
+            <th>lao</th>
+            <th>cam</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="tevie">&nbsp;</td>
+              <td id="telao">&nbsp;</td>
+              <td id="tecam">&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+        <button id="bf2" type="button" class="btn btn-primary">
+          Run percentageOfWorld2
+        </button>
+      </div>
+    </div>
+    <script>
+      const btnf1 = document.querySelector("#bf1");
+      const btnf2 = document.querySelector("#bf2");
+      btnf1.onclick = () => {
+        // Vietnam has 100.3 million of people
+        let vie = percentageOfWorld1(100.3 * 1000000);
+
+        // Laos has 7.75 million of people
+        let lao = percentageOfWorld1(7.75 * 1000000);
+
+        // Cambodia has 17.1 million of people
+        let cam = percentageOfWorld1(17.1 * 1000000);
+
+        document.getElementById("tdvie").innerHTML = vie + "%";
+        document.getElementById("tdlao").innerHTML = lao + "%";
+        document.getElementById("tdcam").innerHTML = cam + "%";
+
+        // Print the results to the console
+        console.log(vie + "%");
+        console.log(lao + "%");
+        console.log(cam + "%");
+      };
+
+      btnf2.onclick = () => {
+        // Vietnam has 100.3 million of people
+        let vie = percentageOfWorld2(100.3 * 1000000);
+
+        // Laos has 7.75 million of people
+        let lao = percentageOfWorld2(7.75 * 1000000);
+
+        // Cambodia has 17.1 million of people
+        let cam = percentageOfWorld2(17.1 * 1000000);
+
+        document.getElementById("tevie").innerHTML = vie + "%";
+        document.getElementById("telao").innerHTML = lao + "%";
+        document.getElementById("tecam").innerHTML = cam + "%";
+
+        // Print the results to the console
+        console.log(vie + "%");
+        console.log(lao + "%");
+        console.log(cam + "%");
+      };
+    </script>
+  </body>
+</html>

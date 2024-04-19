@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="vn">
+  <head>
+    <title>lab17.7.2 tip calculator (part 2)</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./icons/favicon.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/lab17.7.js"></script>
+  </head>
+  <body>
+    <div class="container my-3">
+      <h3>Bài toán tổng hợp #3</h3>
+      <h4>Lab 17.7.2</h4>
+      <div
+        class="container my-3 py-3 px-3"
+        style="background-color: aquamarine"
+      >
+        <p style="font-size: larger; font-weight: bolder">
+          Xây dựng Tip calculator (phần 2)
+        </p>
+        <p>
+          Steve vẫn đang xây dựng tip calculator, sử dụng quy tắc tương tự như
+          trước: Tip 15% hóa đơn nếu giá trị hóa đơn trong khoảng 50 - 300, và
+          với giá trị khác thì tip 20%.
+        </p>
+        <ol>
+          <li class="mt-3">
+            <strong>Nhiệm vụ của bạn:</strong>
+            <ul>
+              <li class="my-1">
+                Viết hàm 'calcTip' nhận giá trị hóa đơn bất kỳ làm đầu vào và
+                trả về tiền tip tương ứng, tính toán theo các quy tắc ở trên
+                (bạn có thể xem lại code từ thử thách tip calculator đầu tiên
+                nếu cần). Sử dụng loại hàm mà bạn thích nhất. Kiểm tra hàm sử
+                dụng giá trị hóa đơn là 100.
+              </li>
+              <li class="my-1">
+                Giờ hãy dùng array. Hãy tạo array 'bills' có chứa dữ liệu kiểm
+                tra bên dưới.
+              </li>
+              <li class="my-1">
+                Tạo array 'tips' có chứa giá trị tiền tip cho từng hóa đơn, tính
+                từ hàm mà bạn đã tạo trước đó.
+              </li>
+              <li class="my-1">
+                Bonus: Tạo array 'total' có chứa tổng giá trị, tức là bill +
+                tip.
+              </li>
+            </ul>
+          </li>
+          <li class="mt-3">
+            <strong>Dữ liệu kiểm tra:</strong>
+            <ul>
+              <li>125, 555 và 44</li>
+            </ul>
+          </li>
+          <li style="list-style: none" class="mt-3">
+            <strong>Gợi ý:</strong> Hãy nhớ rằng array cần một giá trị ở mỗi vị
+            trí, giá trị đó có thể là giá trị trả về của hàm! Do đó bạn có thể
+            gọi hàm như giá trị array (trước tiên đừng lưu giá trị tip trong các
+            biến riêng biệt, mà trong array mới).
+          </li>
+        </ol>
+      </div>
+      <h3>Thực hành</h3>
+      <div
+        class="container my-3 py-3 px-3"
+        style="background-color: rgb(218, 218, 218)"
+      >
+        <p style="font-size: larger; font-weight: bolder">
+          Using arrays and functions
+        </p>
+        <div
+          class="container my-3 py-1 bg-white"
+          style="border-left: solid 4px cyan; font-size: small"
+        >
+          <p>
+            <span style="color: green"
+              >// The function that calculates tip from input bill value</span
+            ><br />
+            <span style="color: blue">const</span> calcTip = (bill) => bill >=
+            <span style="color: red">50</span> && bill &lt;=
+            <span style="color: red">300</span> ?
+            <span style="color: red">0.15</span> * bill :
+            <span style="color: red">0.2</span> * bill;
+          </p>
+          <p>
+            <span style="color: green"
+              >// Create an array that contains provided data of bills</span
+            ><br />
+            <span style="color: blue">let</span> bills = [<span
+              style="color: red"
+              >125</span
+            >, <span style="color: red">555</span>,
+            <span style="color: red">44</span>];
+          </p>
+          <p>
+            <span style="color: green"
+              >// Create an array that contains the values of tips calculated
+              from provided data of bills</span
+            ><br />
+            <span style="color: blue">let</span> tips = [];<br />
+            <span style="color: blue">for</span> (<span style="color: blue"
+              >let</span
+            >
+            i = <span style="color: red">0</span>; i < bills.<span
+              style="color: blue"
+              >length</span
+            >; i++) tips[i] = calcTip(bills[i]);
+          </p>
+          <p>
+            <span style="color: green"
+              >// Create an array that contains the values of (bill + tip)
+              calculated from provided data of bills</span
+            ><br />
+            <span style="color: blue">let</span> total = [];<br />
+            <span style="color: blue">for</span> (<span style="color: blue"
+              >let</span
+            >
+            i = <span style="color: red">0</span>; i < bills.<span
+              style="color: blue"
+              >length</span
+            >; i++) total[i] = bills[i] + calcTip(bills[i]);
+          </p>
+        </div>
+        <p style="font-size: larger; font-weight: bolder">Kiểm tra kết quả</p>
+        <table class="table table-bordered">
+          <tr>
+            <th style="width: 12%">
+              <button
+                id="b_cal_tip"
+                type="button"
+                class="btn btn-primary mb-1"
+                style="width: 100%"
+              >
+                tip = ?
+              </button>
+            </th>
+            <td style="width: 44%">
+              <input
+                id="in_bill"
+                type="number"
+                class="form-control mb-1"
+                placeholder="Enter a value of bill"
+              />
+            </td>
+            <td style="width: 44%">
+              <p id="p_cal_tip" class="form-control mb-1">&nbsp;</p>
+            </td>
+          </tr>
+        </table>
+        <table class="table table-bordered">
+          <tr>
+            <th style="width: 12%">
+              <p class="form-control mb-1">bills</p>
+            </th>
+            <td style="width: 88%">
+              <p id="p_bills" class="form-control mb-1"></p>
+            </td>
+          </tr>
+          <tr>
+            <th style="width: 12%">
+              <button
+                id="b_tips"
+                type="button"
+                class="btn btn-primary mb-1"
+                style="width: 100%"
+              >
+                tips = ?
+              </button>
+            </th>
+            <td style="width: 88%">
+              <p id="p_tips" class="form-control mb-1">&nbsp;</p>
+            </td>
+          </tr>
+          <tr>
+            <th style="width: 12%">
+              <button
+                id="b_total"
+                type="button"
+                class="btn btn-primary mb-1"
+                style="width: 100%"
+              >
+                total = ?
+              </button>
+            </th>
+            <td style="width: 88%">
+              <p id="p_total" class="form-control mb-1">&nbsp;</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <script>
+      const btn_cal_tip = document.querySelector("#b_cal_tip");
+      const btn_tips = document.querySelector("#b_tips");
+      const btn_total = document.querySelector("#b_total");
+      // Create an array that contains provided data of bills
+      let bills = [125, 555, 44];
+      document.getElementById("p_bills").innerHTML = `[${bills}]`;
+      btn_cal_tip.onclick = () => {
+        let bill_val = Number(document.getElementById("in_bill").value);
+        let tip_val = calcTip(bill_val);
+        document.getElementById("p_cal_tip").innerHTML = `${tip_val}`;
+      };
+      btn_tips.onclick = () => {
+        let tipsarr = tips(bills);
+        document.getElementById("p_tips").innerHTML = `[${tipsarr}]`;
+      };
+      btn_total.onclick = () => {
+        let totalarr = total(bills);
+        document.getElementById("p_total").innerHTML = `[${totalarr}]`;
+      };
+    </script>
+  </body>
+</html>

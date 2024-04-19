@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="vn">
+  <head>
+    <title>lab17.6 - basic methods of array</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./icons/favicon.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/lab17.6.js"></script>
+  </head>
+  <body>
+    <div class="container my-3">
+      <h3>Lab 17.6</h3>
+      <div
+        class="container my-3 py-3 px-3"
+        style="background-color: aquamarine"
+      >
+        <p style="font-size: large; font-weight: bold">
+          Các phương thức cơ bản của array
+        </p>
+        <ol>
+          <li class="mb-1">
+            Tạo một array chứa tất cả các nước láng giềng của một nước bất kỳ.
+            Chọn một nước có ít nhất 2 hoặc 3 nước láng giềng. Lưu array vào
+            biến 'neighbours'.
+          </li>
+          <li class="mb-1">
+            Ở một số thời điểm, một đất nước mới là 'Utopia' được tạo ra trong
+            vùng lân cận của quốc gia bạn chọn. Vậy hãy thêm nó vào cuối array
+            'neighbours'.
+          </li>
+          <li class="mb-1">
+            Không may, sau một thời gian, nước mới này biến mất. Vậy hãy xóa nó
+            khỏi cuối array.
+          </li>
+          <li class="mb-1">
+            Nếu array 'neighbours' không chứa 'Germany', hãy in ra console rằng:
+            'Probably not a central European country :D'.
+          </li>
+          <li class="mb-1">
+            Thay đổi tên của một trong các nước láng giềng của bạn. Để thực hiện
+            điều đó, hãy tìm chỉ mục của đất nước trong array 'neighbours', rồi
+            sử dụng nó để thay đổi array ở vị trí chỉ mục đó. Chẳng hạn, nếu bạn
+            tìm thấy 'Sweden' trong array, hãy thay nó bằng 'Republic of
+            Sweden'.
+          </li>
+        </ol>
+      </div>
+      <h3>Thực hành</h3>
+      <div
+        class="container my-3 py-3 px-3"
+        style="background-color: rgb(218, 218, 218)"
+      >
+        <p style="font-size: larger; font-weight: bolder">
+          Tạo array và áp dụng các phương thức cơ bản của array
+        </p>
+        <div
+          class="container my-3 py-3 bg-white"
+          style="border-left: solid 4px cyan"
+        >
+          <p>
+            <span style="color: green"
+              >// Define a variable that will contain the needed array</span
+            ><br />
+            <span style="color: blue">let</span> neighbours;
+          </p>
+          <p>
+            <span style="color: green"
+              >// Let's choose Norway, which has 3 neighbouring nations (Sweden,
+              Finland, and Russia) for our exercise.</span
+            ><br />
+            neighbours = [<span style="color: brown">"Sweden"</span>,
+            <span style="color: brown">"Finland"</span>,
+            <span style="color: brown">"Russia"</span>];<br />
+          </p>
+          <p>
+            <span style="color: green"
+              >// Add a neighbour named 'Utopia' to the end of array
+              'neighbours'</span
+            ><br />
+            neighbours.<span style="color: blue">push</span>(<span
+              style="color: brown"
+              >"Utopia"</span
+            >);<br />
+          </p>
+          <p>
+            <span style="color: green"
+              >// Remove the last element from array 'neighbours'</span
+            ><br />
+            neighbours.<span style="color: blue">pop()</span>;<br />
+          </p>
+          <p>
+            <span style="color: green"
+              >// Check if Germany is one of the neighbours</span
+            ><br />
+            <span style="color: blue">if</span> (neighbours.<span
+              style="color: blue"
+              >includes</span
+            >(<span style="color: brown">"Germany"</span>) {<br />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: blue"
+              >console.log</span
+            >(<span style="color: brown"
+              >"Probably not a central European country :D"</span
+            >);<br />};
+          </p>
+          <p>
+            <span style="color: green"
+              >// Change the value of a specified element in array 'neighbours'. </span
+            ><br />
+            <span style="color: green"
+              >// Take an example, replace 'Sweden' in the array 'neighbours'
+              with 'Republic of Sweden'</span
+            ><br />
+            <span style="color: blue">let</span> repIndex = neighbours.<span
+              style="color: blue"
+              >indexOf</span
+            >(<span style="color: brown">"Sweden"</span>);<br />
+            neighbours[repIndex] =
+            <span style="color: brown">"Republic of Sweden"</span>;
+          </p>
+        </div>
+        <p style="font-size: larger; font-weight: bolder">
+          Kiểm tra kết quả
+          <span style="font-size: medium; font-weight: normal"
+            >(Run from the top to the bottom)</span
+          >
+        </p>
+        <table class="table table-bordered">
+          <tr>
+            <th style="width: 32%">
+              <button
+                id="lab17_6_b1"
+                type="button"
+                style="width: 100%; background-color: blueviolet; color: white"
+              >
+                Create array named 'neighbours'
+              </button>
+            </th>
+            <td id="lab17_6_td1">&nbsp;</td>
+          </tr>
+          <tr>
+            <th style="width: 32%">
+              <button
+                id="lab17_6_b2"
+                type="button"
+                style="width: 100%; background-color: blueviolet; color: white"
+              >
+                Add a new element to the end of 'neighbours'
+              </button>
+            </th>
+            <td id="lab17_6_td2">&nbsp;</td>
+          </tr>
+          <tr>
+            <th style="width: 32%">
+              <button
+                id="lab17_6_b3"
+                type="button"
+                style="width: 100%; background-color: blueviolet; color: white"
+              >
+                Remove the last element from array 'neighbours'
+              </button>
+            </th>
+            <td id="lab17_6_td3">&nbsp;</td>
+          </tr>
+          <tr>
+            <th style="width: 32%">
+              <button
+                id="lab17_6_b4"
+                type="button"
+                style="width: 100%; background-color: blueviolet; color: white"
+              >
+                Check if Germany is one of the neighbours
+              </button>
+            </th>
+            <td id="lab17_6_td4">&nbsp;</td>
+          </tr>
+          <tr>
+            <th style="width: 32%">
+              <button
+                id="lab17_6_b5"
+                type="button"
+                style="width: 100%; background-color: blueviolet; color: white"
+              >
+                Change the value of a specified element in array 'neighbours'
+              </button>
+            </th>
+            <td id="lab17_6_td5">&nbsp;</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <script>
+      const btntd1 = document.querySelector("#lab17_6_b1");
+      const btntd2 = document.querySelector("#lab17_6_b2");
+      const btntd3 = document.querySelector("#lab17_6_b3");
+      const btntd4 = document.querySelector("#lab17_6_b4");
+      const btntd5 = document.querySelector("#lab17_6_b5");
+
+      // Define a variable that will contain the needed array
+      let neighbours;
+
+      btntd1.onclick = () => {
+        neighbours = ["Sweden", "Finland", "Russia"];
+        document.getElementById("lab17_6_td1").innerHTML = neighbours;
+      };
+      btntd2.onclick = () => {
+        // Add a neighbour named 'Utopia' to the end of array 'neighbours'
+        neighbours.push("Utopia");
+        document.getElementById("lab17_6_td2").innerHTML = neighbours;
+      };
+      btntd3.onclick = () => {
+        // Remove the last element from array 'neighbours'
+        neighbours.pop();
+        document.getElementById("lab17_6_td3").innerHTML = neighbours;
+      };
+      btntd4.onclick = () => {
+        // Check if Germany is one of the neighbours
+        if (neighbours.includes("Germany")) {
+          console.log("Probably a central European country :D");
+          document.getElementById("lab17_6_td4").innerHTML =
+            "Yes! Probably a central European country :D";
+        } else {
+          console.log("Probably not a central European country :D");
+          document.getElementById("lab17_6_td4").innerHTML =
+            "No! Probably not a central European country :D";
+        }
+      };
+      btntd5.onclick = () => {
+        // Change the value of a specified element in array 'neighbours'.
+        // Take an example, replace 'Sweden' in the array 'neighbours' with 'Republic of Sweden'
+        let repIndex = neighbours.indexOf("Sweden");
+        neighbours[repIndex] = "Republic of Sweden";
+        document.getElementById("lab17_6_td5").innerHTML = neighbours;
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="vn">
+  <head>
+    <title>lab17.1</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./icons/favicon.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/lab17.1.js"></script>
+  </head>
+  <body>
+    <div class="container my-3">
+      <h3>Lab 17.1</h3>
+      <div
+        class="container my-3 py-3 px-3"
+        style="background-color: aquamarine"
+      >
+        <p style="font-size: large; font-weight: bold">Hàm</p>
+        <ol>
+          <li>
+            Viết hàm 'describeCountry' nhận ba tham số: 'country', 'population'
+            và 'capitalCity'. Dựa vào input này, hàm trả về string với định dạng
+            như sau: 'Finland has 6 million people and its capital city is
+            Helsinki".
+          </li>
+          <li>
+            Gọi hàm này 3 lần với dữ liệu đầu vào cho 3 nước khác nhau. Lưu các
+            giá trị trả về ở 3 biến khác nhau, và in chúng ra console.
+          </li>
+        </ol>
+      </div>
+      <h3>Thực hành.</h3>
+      <div
+        class="container my-3 py-3 px-3"
+        style="background-color: rgb(218, 218, 218)"
+      >
+        <ol>
+          <li>
+            <p style="font-size: large; font-weight: bold">
+              Viết hàm 'describeCountry'
+            </p>
+            <div
+              class="container my-3 px-3 py-1 bg-white"
+              style="border-left: solid 4px cyan"
+            >
+              <p>
+                <span style="color: blue">function</span>
+                describeCountry(country, population, capitalCity) {<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue">return</span>
+                <span style="color: orangered"
+                  >`${country} has ${population} million people and its capital
+                  city is ${capitalCity}`</span
+                >;<br />}
+              </p>
+            </div>
+          </li>
+          <li>
+            <p style="font-size: large; font-weight: bold">
+              Gọi hàm này 3 lần với dữ liệu đầu vào cho 3 nước khác nhau
+            </p>
+            <div
+              class="container my-3 px-3 py-1 bg-white"
+              style="border-left: solid 4px cyan"
+            >
+              <p>
+                <span style="color: blue">let</span> describeVietnam =
+                describeCountry(<span style="color: brown">"Vietnam"</span>,
+                <span style="color: red">100.3</span>,
+                <span style="color: brown">"Hanoi"</span>);<br />
+                <span style="color: blue">let</span> describeLaos =
+                describeCountry(<span style="color: brown">"Laos"</span>,
+                <span style="color: red">7.75</span>,
+                <span style="color: brown">"Vientiane"</span>);<br />
+                <span style="color: blue">let</span> describeCambodia =
+                describeCountry(<span style="color: brown">"Cambodia"</span>,
+                <span style="color: red">17.1</span>,
+                <span style="color: brown">"Phnom Penh"</span>);<br />
+              </p>
+              <p>
+                <span style="color: blue">console</span
+                >.log(describeVietnam);<br />
+                <span style="color: blue">console</span
+                >.log(describeLaos);<br />
+                <span style="color: blue">console</span>.log(describeCambodia);
+              </p>
+            </div>
+          </li>
+        </ol>
+      </div>
+      <h3>Chạy kiểm tra</h3>
+      <div
+        class="container my-3 py-3 px-3"
+        style="background-color: rgb(218, 218, 218)"
+      >
+        <div class="input-group mb-3">
+          <span class="input-group-text bg-info"
+            ><strong>Input parameters:</strong></span
+          >
+          <input
+            id="iCountry"
+            type="text"
+            class="form-control"
+            placeholder="country"
+          />
+          <input
+            id="iPopulation"
+            type="number"
+            class="form-control"
+            placeholder="population"
+          />
+          <input
+            id="iCapital"
+            type="text"
+            class="form-control"
+            placeholder="capitalCity"
+          />
+        </div>
+        <div class="d-flex flex-row bg-white mb-3">
+          <button id="bRun" type="button" class="btn btn-primary">
+            Export returned string
+          </button>
+          <p id="oMsg" class="px-3 pt-2">&nbsp;</p>
+        </div>
+      </div>
+    </div>
+    <script>
+      const btnrun = document.querySelector("#bRun");
+      btnrun.onclick = () => {
+        let icountry = document.getElementById("iCountry").value;
+        let ipopulation = Number(document.getElementById("iPopulation").value);
+        let icapital = document.getElementById("iCapital").value;
+
+        let omsg = describeCountry(icountry, ipopulation, icapital);
+        document.getElementById("oMsg").innerHTML = omsg;
+        console.log(omsg);
+      };
+    </script>
+  </body>
+</html>
