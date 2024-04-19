@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" />
+    <link rel="icon" type="image/x-icon" href="./icons/favicon.png" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>lab 19.1. game đoán số</title>
+  </head>
+  <body>
+    <header>
+      <p class="htitle">Lab19.1</p>
+      <div class="hcontent">
+        <p>
+          Viết lại toàn bộ phần code cho project
+          <a
+            href="https://docs.google.com/document/d/1s_Da4w-FzTPGmkGADMWvbBYOK8SluLdm/edit"
+            target="_blank"
+            >đoán số</a
+          >
+        </p>
+      </div>
+    </header>
+    <main>
+      <p class="htitle">Thực hành</p>
+      <br />
+      <div class="game">
+        <section class="g-header">
+          <h1>Guess My Number!</h1>
+          <p class="between">(Between 1 and 20)</p>
+          <button class="btn again">Again!</button>
+          <div class="number">?</div>
+        </section>
+        <section class="g-body">
+          <div class="left">
+            <input type="number" class="guess" />
+            <button class="btn check">Check!</button>
+          </div>
+          <div class="right">
+            <p class="message">Start guessing...</p>
+            <p class="label-score">💯 Score: <span class="score">20</span></p>
+            <p class="label-highscore">
+              🥇 Highscore: <span class="highscore">0</span>
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script src="./js/lab19.1.js"></script>
+  </body>
+</html>
