@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="vn">
+  <head>
+    <title>lab16.6.2</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./icons/favicon.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="container my-3">
+      <h3>Bài toán tổng hợp #2</h3>
+      <div
+        class="container my-3 py-3 px-3"
+        style="background-color: aquamarine"
+      >
+        <p style="font-size: large; font-weight: bold">
+          Lab 16.6.2 Tip Calculator (Part 1)
+        </p>
+        <p>
+          Steven muốn tạo một tip calculator (công cụ tính tiền tip) đơn giản
+          cho những khi anh ta muốn ăn ở nhà hàng. Ở đất nước của anh ta, người
+          ta thường tip 15% nếu giá trị hóa đơn nằm trong khoảng 50-300. Với
+          những giá trị khác, tip thường là 20%.
+        </p>
+        <ol>
+          <li>
+            <p class="my-1"><strong>Nhiệm vụ của bạn:</strong></p>
+            <ul>
+              <li>
+                Tính tip dựa theo giá trị hóa đơn. Tạo biến 'tip' cho điều này.
+                Không dùng câu lệnh if/else (Để dễ hơn, bạn có thể bắt đầu với
+                lệnh if/else sau đó chuyển đổi nó thành toán tử ba ngôi!)
+              </li>
+              <li>
+                In string ra console có chứa giá trị hóa đơn (bill), tiền tip và
+                giá trị cuối cùng (bill + tip). Ví dụ: "The bill was 275, the
+                tip was 41.25, and the total value 316.25"
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p class="my-1"><strong>Dữ liệu kiểm tra:</strong></p>
+            <ul>
+              <li>Dữ liệu 1: Kiểm tra giá trị bill 275, 40 và 430</li>
+            </ul>
+          </li>
+          <li>
+            <p class="my-1"><strong>Gợi ý:</strong></p>
+            <ul>
+              <li>Tính 20% của giá trị, nhân nó với 20/100 = 0.2</li>
+              <li>
+                Giá trị X nằm trong khoảng 50 và 300, nếu nó >= 50 && <= 300
+              </li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+      <br />
+      <h3>Thực hành</h3>
+      <div
+        class="container my-3 py-3 px-3"
+        style="background-color: rgb(218, 218, 218)"
+      >
+        <p style="font-size: large; font-weight: bold">
+          Tip Calculator (part 1)
+        </p>
+        <div
+          class="container my-3 py-1 bg-white"
+          style="border-left: solid 4px cyan; font-size: small"
+        >
+          <p>
+            <span style="color: blue">let</span>
+            bill;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: green"
+              >// The variable contains bill's value</span
+            ><br />
+          </p>
+          <p>
+            <span style="color: green"
+              >// Define a variable that contains the value of tip</span
+            ><br />
+            <span style="color: blue">let</span> tip = ((bill &gt;=
+            <span style="color: red">50</span>) && (bill &lt;=
+            <span style="color: red">300</span>)) ? (<span style="color: red"
+              >0.15</span
+            >
+            * bill) : (<span style="color: red">0.2</span> * bill);<br />
+          </p>
+          <p>
+            <span style="color: green"
+              >// Define a variable that holds the value of total money</span
+            ><br />
+            <span style="color: blue">let</span> total = bill + tip;
+          </p>
+          <p>
+            <span style="color: green"
+              >// Define a variable holds the message that will be printed out
+              the console</span
+            ><br />
+            <span style="color: blue">let</span> msg =
+            <span style="color: orangered"
+              >`The bill was ${bill}, the tip was ${tip}, and the total value
+              ${total}`</span
+            >;
+          </p>
+          <p>
+            <span style="color: green">// Print out the msg</span><br />
+            console.log(msg);
+          </p>
+        </div>
+        <br />
+        <input
+          id="inbill"
+          type="number"
+          class="form-control"
+          style="color: red; font-weight: bold"
+          placeholder="Enter a value of bill"
+        />
+        <p id="outmsg" class="my-3 py-1 px-3 bg-white">&nbsp;</p>
+        <button id="bcaltip" type="button" class="btn btn-primary">
+          Calculate tip
+        </button>
+      </div>
+    </div>
+    <script>
+      const btncaltip = document.querySelector("#bcaltip");
+      btncaltip.onclick = () => {
+        let billval = Number(document.getElementById("inbill").value);
+        try {
+          let bill = billval; // The variable contains bill's value
+
+          // Define a variable that contains the value of tip
+          let tip = bill >= 50 && bill <= 300 ? 0.15 * bill : 0.2 * bill;
+
+          // Define a variable that holds the value of total money
+          let total = bill + tip;
+
+          // Define a variable holds the message that will be printed out the console
+          let msg = `The bill was ${bill}, the tip was ${tip}, and the total value ${total}`;
+
+          document.getElementById("outmsg").innerHTML = msg;
+          // Print out the msg
+          console.log(msg);
+        } catch (err) {
+          document.getElementById("outmsg").innerHTML = err;
+          console.log(err);
+        }
+      };
+    </script>
+  </body>
+</html>

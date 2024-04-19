@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="vn">
+  <head>
+    <title>lab16.4. câu lệnh switch</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./images/favicon.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="container mt-3">
+      <h3>Lab 16.4</h3>
+      <div
+        class="container my-3 py-3 px-3"
+        style="background-color: aquamarine"
+      >
+        <p style="font-size: larger; font-weight: bolder">Câu lệnh switch</p>
+        <ol>
+          <li>Sử dụng câu lệnh switch để ghi string sau cho 'language':</li>
+          <li>Chinese or Mandarin: 'MOST number of native speakers!'</li>
+          <li>Spanish: '2nd place in number of native speakers'</li>
+          <li>English: '3rd place'</li>
+          <li>Hindi: 'Number 4'</li>
+          <li>Arabic: '5th most spoken language'</li>
+          <li>Tất cả các log đơn giản khác: 'Great language too :D'</li>
+        </ol>
+      </div>
+      <br />
+      <h3>Thực hành</h3>
+      <div
+        class="container my-3 py-3 px-3"
+        style="background-color: rgb(218, 218, 218)"
+      >
+        <p style="font-size: larger; font-weight: bolder">
+          Using switch statement
+        </p>
+        <div
+          class="container my-3 py-1 bg-white"
+          style="border-left: solid 4px cyan; font-size: small"
+        >
+          <p>
+            <span style="color: blue">let</span> language =
+            <span id="ilang" style="color: brown">""</span>;<br />
+            <span style="color: blue">let</span>
+            retval;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: green"
+              >// The variable that will hold the message about language</span
+            >
+          </p>
+          <p>
+            <span style="color: blue">switch</span> (language) {<br />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: blue"
+              >case</span
+            >
+            <span style="color: brown">"Chinese"</span>:<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue">case</span>
+            <span style="color: brown">"Mandarin"</span>:<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;retval =
+            <span style="color: brown">"MOST number of native speakers!"</span
+            >;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: blue"
+              >break</span
+            >;<br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue"
+              >case</span
+            >
+            <span style="color: brown">"Spanish"</span
+            >:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;retval =
+            <span style="color: brown"
+              >"2nd place in number of native speakers"</span
+            >;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: blue"
+              >break</span
+            >;<br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue"
+              >case</span
+            >
+            <span style="color: brown">"English"</span
+            >:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;retval =
+            <span style="color: brown">"3rd place"</span
+            >;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: blue"
+              >break</span
+            >;<br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue"
+              >case</span
+            >
+            <span style="color: brown">"Hindi"</span
+            >:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;retval =
+            <span style="color: brown">"Number 4"</span
+            >;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: blue"
+              >break</span
+            >;<br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue"
+              >case</span
+            >
+            <span style="color: brown">"Arabic"</span
+            >:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;retval =
+            <span style="color: brown">"5th most spoken language"</span
+            >;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: blue"
+              >break</span
+            >;<br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue"
+              >default</span
+            >:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;retval =
+            <span style="color: brown">"Great language too :D"</span>;<br />}
+          </p>
+          <p>
+            <span style="color: green"
+              >// Print the message about considered language to the
+              console</span
+            ><br />
+            <span style="color: blue">console</span>.log(retval);
+          </p>
+        </div>
+        <p style="font-size: larger; font-weight: bolder">Kiểm tra kết quả</p>
+        <table class="table table-bordered">
+          <thead>
+            <th style="text-align: center">
+              Output message<br /><span
+                style="font-size: small; font-weight: normal"
+                >(The same as what is printed on the console)</span
+              >
+            </th>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="tdomsg">&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="my-3">
+          <input
+            id="inLanguage"
+            type="text"
+            class="text-primary"
+            placeholder="Language"
+            autocomplete="off"
+          />
+          <button
+            id="runScript"
+            type="button"
+            class="btn btn-primary me-3"
+            style="float: right"
+          >
+            Run script
+          </button>
+        </div>
+      </div>
+    </div>
+    <script>
+      const itxt = document.querySelector("#inLanguage");
+      const btnRun = document.querySelector("#runScript");
+      itxt.onchange = () => {
+        document.getElementById("ilang").innerHTML = `"${itxt.value}"`;
+      };
+
+      btnRun.onclick = () => {
+        let language = document.getElementById("inLanguage").value;
+        let retval; // The variable that will hold the message about language
+        switch (language) {
+          case "Chinese":
+          case "Mandarin":
+            retval = "MOST number of native speakers!";
+            break;
+          case "Spanish":
+            retval = "2nd place in number of native speakers";
+            break;
+          case "English":
+            retval = "3rd place";
+            break;
+          case "Hindi":
+            retval = "Number 4";
+            break;
+          case "Arabic":
+            retval = "5th most spoken language";
+            break;
+          default:
+            retval = "Great language too :D";
+        }
+        // Print the message about considered language to the console
+        console.log(retval);
+        document.getElementById("tdomsg").innerHTML = retval;
+      };
+    </script>
+  </body>
+</html>

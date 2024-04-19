@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="vn">
+  <head>
+    <title>lab16.1.1</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./icons/favicon.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="container my-3">
+      <h3>Bài toán tổng hợp #2</h3>
+      <div
+        class="container my-3 py-3 px-3"
+        style="background-color: aquamarine"
+      >
+        <p style="font-size: large; font-weight: bold">
+          Lab 16.6.1. Đội nào chiến thắng? (phần 1)
+        </p>
+        <p>
+          Có hai đội thể dục dụng cụ là <strong>Dolphins</strong> và
+          <strong>Koallas</strong>. Họ thi đấu với nhau 3 lần. Đội nào có điểm
+          trung bình cao nhất sẽ chiến thắng!
+        </p>
+        <ol>
+          <li>
+            <strong>Nhiệm vụ của bạn:</strong>
+            <ul class="mb-3">
+              <li>
+                Tính điểm cho từng đội, sử dụng dữ liệu kiểm tra bên dưới.
+              </li>
+              <li class="mb-1">
+                So sánh điểm trung bình của hai đội để tìm ra đội chiến thắng và
+                in ra console. Đừng quên là có thể hòa, nên hãy kiểm tra điều đó
+                (hòa tức là họ có điểm trung bình giống nhau)
+              </li>
+              <li class="mb-1">
+                <strong>Bonus 1:</strong> Chúng ta được thêm một quy tắc như
+                sau: số điểm tối thiểu là 100 điểm. Theo quy tắc này, một đội sẽ
+                dành chiến thắng chỉ khi họ có điểm trung bình cao hơn đội còn
+                lại, và đồng thời có ít nhất 100 điểm. Gợi ý: Sử dụng toán tử
+                logic để kiểm tra điểm số tối thiểu cũng như các else-if block!
+              </li>
+              <li class="mb-1">
+                <strong>Bonus 2:</strong>Điểm số tối thiểu cũng áp dụng cho việc
+                hòa trận!<br />Trường hợp hòa nhau chỉ xảy ra khi cả hai đội có
+                số điểm giống nhau mà phải lớn hơn hoặc bằng 100 điểm. Nếu không
+                thì không có đội nào giành chiến thắng cả.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Dữ liệu kiểm tra:</strong>
+            <ul class="mb-3">
+              <li class="mb-1">
+                Dữ liệu 1: Dolphins được 96, 108 và 89 điểm. Koalas được 88, 91
+                và 110 điểm
+              </li>
+              <li class="mb-1">
+                Dữ liệu Bonus 1: Dolphins được 97, 112 và 101 điểm. Koalas được
+                109, 95 và 123 điểm
+              </li>
+              <li class="mb-1">
+                Dữ liệu Bonus 2: Dolphins được 97, 112 và 101 điểm. Koalas được
+                109, 95 và 106 điểm
+              </li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+      <br />
+      <h3>Thực hành</h3>
+      <div
+        class="container my-3 py-3 px-3"
+        style="background-color: rgb(218, 218, 218)"
+      >
+        <p>
+          <span style="font-size: large; font-weight: bold">Phần cơ bản</span
+          ><br />Tìm đội chiến thắng dựa vào điểm trung bình.
+        </p>
+        <div
+          class="container my-3 py-1 bg-white"
+          style="border-left: solid 4px cyan; font-size: small"
+        >
+          <p>
+            <span style="color: blue">const</span> dolp_points = [<span
+              style="color: red"
+              >96</span
+            >, <span style="color: red">108</span>,
+            <span style="color: red">98</span>];&nbsp;&nbsp;&nbsp;&nbsp;
+            <span style="color: green"
+              >// The array contains Dolpins' points</span
+            ><br />
+            <span style="color: blue">const</span> koal_points = [<span
+              style="color: red"
+              >88</span
+            >, <span style="color: red">91</span>,
+            <span style="color: red">110</span
+            >];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: green"
+              >// The array contains Koalas' points</span
+            ><br />
+            <span style="color: blue">let</span> dLen = dolp_points.length;<br />
+            <span style="color: blue">let</span> kLen = koal_points.length;<br />
+            <span style="color: blue">let</span>
+            dAve =
+            <span style="color: red">0</span>;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: green"
+              >// The variable contains the average point of Dolphins</span
+            ><br />
+            <span style="color: blue">let</span>
+            kAve =
+            <span style="color: red">0</span>;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: green"
+              >// The variable contains the average point of Dolphins</span
+            ><br />
+            <span style="color: blue">let</span> msg =
+            <span style="color: brown">""</span>;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: green"
+              >// The variable contains the message that will be printed out the
+              console.</span
+            >
+          </p>
+          <p>
+            <span style="color: green">// Update value for dAve variable</span
+            ><br />
+            <span style="color: blue">for</span> (<span style="color: blue"
+              >let</span
+            >
+            i = <span style="color: red">0</span>; i < dLen; i++) {<br />&nbsp;&nbsp;&nbsp;&nbsp;dAve
+            += dolp_points[i];<br />}<br />
+            dAve /= dLen;
+          </p>
+          <p>
+            <span style="color: green">// Update value for kAve variable</span
+            ><br />
+            <span style="color: blue">for</span> (<span style="color: blue"
+              >let</span
+            >
+            i = <span style="color: red">0</span>; i < kLen; i++) {<br />&nbsp;&nbsp;&nbsp;&nbsp;kAve
+            += koal_points[i];<br />}<br />
+            kAve /= kLen;
+          </p>
+          <p>
+            <span style="color: green"
+              >// Specify which team won or they drew with each other</span
+            ><br />
+            <span style="color: blue">if</span> (dAve < kAve) {<br />&nbsp;&nbsp;&nbsp;&nbsp;msg
+            =
+            <span style="color: brown">"Đội Koalas thắng"</span
+            >;<br />}&nbsp;<span style="color: blue">else if</span> (dAve ==
+            kAve) {<br />&nbsp;&nbsp;&nbsp;&nbsp;msg =
+            <span style="color: brown">"Hai đội hòa nhau"</span
+            >;<br />}&nbsp;<span style="color: blue">else</span>
+            {<br />&nbsp;&nbsp;&nbsp;&nbsp;msg =
+            <span style="color: brown">"Đội Dolphins thắng"</span>;<br />}
+          </p>
+          <p>
+            <span style="color: green"
+              >// Show the value of msg out the console.</span
+            ><br />
+            <span style="color: blue">console</span>.log(msg);
+          </p>
+        </div>
+        <div class="container my-3 bg-white">
+          <p id="p_e16_6_1">&nbsp;</p>
+        </div>
+        <button id="b_e16_6_1" type="button" class="btn btn-primary">
+          Run Lab 16.6.1
+        </button>
+      </div>
+      <br />
+      <div
+        class="container my-3 py-3 px-3"
+        style="background-color: rgb(218, 218, 218)"
+      >
+        <p>
+          <span style="font-size: large; font-weight: bold">Bonus 1</span><br />
+          Tìm đội chiến thắng dựa vào điểm trung bình tối thiểu là 100 điểm.
+        </p>
+        <div
+          class="container my-3 py-1 bg-white"
+          style="border-left: solid 4px cyan; font-size: small"
+        >
+          <p>
+            <span style="color: blue">const</span> dolp_points = [<span
+              style="color: red"
+              >97</span
+            >, <span style="color: red">112</span>,
+            <span style="color: red">101</span>];&nbsp;&nbsp;&nbsp;&nbsp;
+            <span style="color: green"
+              >// The array contains Dolpins' points</span
+            ><br />
+            <span style="color: blue">const</span> koal_points = [<span
+              style="color: red"
+              >109</span
+            >, <span style="color: red">95</span>,
+            <span style="color: red">123</span
+            >];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: green"
+              >// The array contains Koalas' points</span
+            ><br />
+            <span style="color: blue">const</span> minAvePoint =
+            <span style="color: red">100</span>;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: green"
+              >// The minimum average point that each of teams had to
+              earn.</span
+            ><br />
+            <span style="color: blue">let</span> dLen = dolp_points.length;<br />
+            <span style="color: blue">let</span> kLen = koal_points.length;<br />
+            <span style="color: blue">let</span>
+            dAve =
+            <span style="color: red">0</span>;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: green"
+              >// The variable contains the average point of Dolphins</span
+            ><br />
+            <span style="color: blue">let</span>
+            kAve =
+            <span style="color: red">0</span>;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: green"
+              >// The variable contains the average point of Dolphins</span
+            ><br />
+            <span style="color: blue">let</span> msg =
+            <span style="color: brown">""</span>;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: green"
+              >// The variable contains the message that will be printed out the
+              console.</span
+            >
+          </p>
+          <p>
+            <span style="color: green">// Update value for dAve variable</span
+            ><br />
+            <span style="color: blue">for</span> (<span style="color: blue"
+              >let</span
+            >
+            i = <span style="color: red">0</span>; i < dLen; i++) {<br />&nbsp;&nbsp;&nbsp;&nbsp;dAve
+            += dolp_points[i];<br />}<br />
+            dAve /= dLen;
+          </p>
+          <p>
+            <span style="color: green">// Update value for kAve variable</span
+            ><br />
+            <span style="color: blue">for</span> (<span style="color: blue"
+              >let</span
+            >
+            i = <span style="color: red">0</span>; i < kLen; i++) {<br />&nbsp;&nbsp;&nbsp;&nbsp;kAve
+            += koal_points[i];<br />}<br />
+            kAve /= kLen;
+          </p>
+          <p>
+            <span style="color: green"
+              >// Specify which team won or they drew with each other</span
+            ><br />
+            <span style="color: blue">if</span> ((dAve < kAve) && (kAve >=
+            minAvePoint)) {<br />&nbsp;&nbsp;&nbsp;&nbsp;msg =
+            <span style="color: brown">"Đội Koalas thắng"</span
+            >;<br />}&nbsp;<span style="color: blue">else if</span> (dAve ==
+            kAve) {<br />&nbsp;&nbsp;&nbsp;&nbsp;msg =
+            <span style="color: brown">"Hai đội hòa nhau"</span
+            >;<br />}&nbsp;<span style="color: blue">else if</span> ((dAve >
+            kAve) && (dAve >= minAvePoint)) {<br />&nbsp;&nbsp;&nbsp;&nbsp;msg =
+            <span style="color: brown">"Đội Dolphins thắng"</span
+            >;<br />}&nbsp;<span style="color: blue">else</span>
+            {<br />&nbsp;&nbsp;&nbsp;&nbsp;msg =
+            <span style="color: brown">"Không rõ kết quả thế nào"</span>;<br />}
+          </p>
+          <p>
+            <span style="color: green"
+              >// Show the value of msg out the console.</span
+            ><br />
+            <span style="color: blue">console</span>.log(msg);
+          </p>
+        </div>
+        <div class="container my-3 bg-white">
+          <p id="p_e16_6_1_bonus1">&nbsp;</p>
+        </div>
+        <button id="b_e16_6_1bonus1" type="button" class="btn btn-primary">
+          Run Lab 16.6.1 - Bonus 1
+        </button>
+      </div>
+      <br />
+      <div
+        class="container my-3 py-3 px-3"
+        style="background-color: rgb(218, 218, 218)"
+      >
+        <p>
+          <span style="font-size: large; font-weight: bold">Bonus 2</span><br />
+          Điểm số tối thiểu cũng áp dụng cho việc hòa trận!
+        </p>
+        <div
+          class="container my-3 py-1 bg-white"
+          style="border-left: solid 4px cyan; font-size: small"
+        >
+          <p>
+            <span style="color: blue">const</span> dolp_points = [<span
+              style="color: red"
+              >97</span
+            >, <span style="color: red">112</span>,
+            <span style="color: red">101</span>];&nbsp;&nbsp;&nbsp;&nbsp;
+            <span style="color: green"
+              >// The array contains Dolpins' points</span
+            ><br />
+            <span style="color: blue">const</span> koal_points = [<span
+              style="color: red"
+              >109</span
+            >, <span style="color: red">95</span>,
+            <span style="color: red">106</span
+            >];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: green"
+              >// The array contains Koalas' points</span
+            ><br />
+            <span style="color: blue">const</span> minAvePoint =
+            <span style="color: red">100</span>;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: green"
+              >// The minimum average point that each of teams had to
+              earn.</span
+            ><br />
+            <span style="color: blue">let</span> dLen = dolp_points.length;<br />
+            <span style="color: blue">let</span> kLen = koal_points.length;<br />
+            <span style="color: blue">let</span>
+            dAve =
+            <span style="color: red">0</span>;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: green"
+              >// The variable contains the average point of Dolphins</span
+            ><br />
+            <span style="color: blue">let</span>
+            kAve =
+            <span style="color: red">0</span>;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: green"
+              >// The variable contains the average point of Dolphins</span
+            ><br />
+            <span style="color: blue">let</span> msg =
+            <span style="color: brown">""</span>;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: green"
+              >// The variable contains the message that will be printed out the
+              console.</span
+            >
+          </p>
+          <p>
+            <span style="color: green">// Update value for dAve variable</span
+            ><br />
+            <span style="color: blue">for</span> (<span style="color: blue"
+              >let</span
+            >
+            i = <span style="color: red">0</span>; i < dLen; i++) {<br />&nbsp;&nbsp;&nbsp;&nbsp;dAve
+            += dolp_points[i];<br />}<br />
+            dAve /= dLen;
+          </p>
+          <p>
+            <span style="color: green">// Update value for kAve variable</span
+            ><br />
+            <span style="color: blue">for</span> (<span style="color: blue"
+              >let</span
+            >
+            i = <span style="color: red">0</span>; i < kLen; i++) {<br />&nbsp;&nbsp;&nbsp;&nbsp;kAve
+            += koal_points[i];<br />}<br />
+            kAve /= kLen;
+          </p>
+          <p>
+            <span style="color: green"
+              >// Specify which team won or they drew with each other</span
+            ><br />
+            <span style="color: blue">if</span> ((dAve < kAve) && (kAve >=
+            minAvePoint)) {<br />&nbsp;&nbsp;&nbsp;&nbsp;msg =
+            <span style="color: brown">"Đội Koalas thắng"</span
+            >;<br />}&nbsp;<span style="color: blue">else if</span> ((dAve ==
+            kAve) && (dAve >= minAvePoint)) {<br />&nbsp;&nbsp;&nbsp;&nbsp;msg =
+            <span style="color: brown">"Hai đội hòa nhau"</span
+            >;<br />}&nbsp;<span style="color: blue">else if</span> ((dAve >
+            kAve) && (dAve >= minAvePoint)) {<br />&nbsp;&nbsp;&nbsp;&nbsp;msg =
+            <span style="color: brown">"Đội Dolphins thắng"</span
+            >;<br />}&nbsp;<span style="color: blue">else</span>
+            {<br />&nbsp;&nbsp;&nbsp;&nbsp;msg =
+            <span style="color: brown"
+              >"Không có đội nào đạt điểm trung bình tối thiểu"</span
+            >;<br />}
+          </p>
+          <p>
+            <span style="color: green"
+              >// Show the value of msg out the console.</span
+            ><br />
+            <span style="color: blue">console</span>.log(msg);
+          </p>
+        </div>
+        <div class="container my-3 bg-white">
+          <p id="p_e16_6_1_bonus2">&nbsp;</p>
+        </div>
+        <button id="b_e16_6_1bonus2" type="button" class="btn btn-primary">
+          Run Lab 16.6.1 - Bonus 2
+        </button>
+      </div>
+    </div>
+    <script>
+      const btn_e16_6_1 = document.querySelector("#b_e16_6_1");
+      const btn_e16_6_1_bonus1 = document.querySelector("#b_e16_6_1bonus1");
+      const btn_e16_6_1_bonus2 = document.querySelector("#b_e16_6_1bonus2");
+      btn_e16_6_1.onclick = () => {
+        const dolp_points = [96, 108, 98]; // The array contains Dolpins' points
+        const koal_points = [88, 91, 110]; // The array contains Koalas' points
+        let dLen = dolp_points.length;
+        let kLen = koal_points.length;
+        let dAve = 0; // The variable contains the average point of Dolphins
+        let kAve = 0; // The variable contains the average point of Dolphins
+        let msg = ""; // The variable contains the message that will be printed out the console.
+
+        // Update value for dAve variable
+        for (let i = 0; i < dLen; i++) {
+          dAve += dolp_points[i];
+        }
+        dAve /= dLen;
+
+        // Update value for kAve variable
+        for (let i = 0; i < kLen; i++) {
+          kAve += koal_points[i];
+        }
+        kAve /= kLen;
+
+        // Specify which team won or they drew with each other
+        if (dAve < kAve) {
+          msg = "Đội Koalas thắng";
+        } else if (dAve == kAve) {
+          msg = "Hai đội hòa nhau";
+        } else {
+          msg = "Đội Dolphins thắng";
+        }
+
+        document.getElementById("p_e16_6_1").innerHTML = msg;
+        // Show the value of msg out the console.
+        console.log(msg);
+      };
+
+      btn_e16_6_1_bonus1.onclick = () => {
+        const dolp_points = [97, 112, 101]; // The array contains Dolpins' points
+        const koal_points = [109, 95, 123]; // The array contains Koalas' points
+        const minAvePoint = 100; // The minimum average point that each of teams had to earn.
+        let dLen = dolp_points.length;
+        let kLen = koal_points.length;
+        let dAve = 0; // The variable contains the average point of Dolphins
+        let kAve = 0; // The variable contains the average point of Dolphins
+        let msg = ""; // The variable contains the message that will be printed out the console.
+
+        // Update value for dAve variable
+        for (let i = 0; i < dLen; i++) {
+          dAve += dolp_points[i];
+        }
+        dAve /= dLen;
+
+        // Update value for kAve variable
+        for (let i = 0; i < kLen; i++) {
+          kAve += koal_points[i];
+        }
+        kAve /= kLen;
+
+        // Specify which team won or they drew with each other
+        if (dAve < kAve && kAve >= minAvePoint) {
+          msg = "Đội Koalas thắng";
+        } else if (dAve == kAve) {
+          msg = "Hai đội hòa nhau";
+        } else if (dAve > kAve && dAve >= minAvePoint) {
+          msg = "Đội Dolphins thắng";
+        } else {
+          msg = "Không rõ kết quả thế nào";
+        }
+
+        document.getElementById("p_e16_6_1_bonus1").innerHTML = msg;
+        // Show the value of msg out the console.
+        console.log(msg);
+      };
+
+      btn_e16_6_1_bonus2.onclick = () => {
+        const dolp_points = [97, 112, 101]; // The array contains Dolpins' points
+        const koal_points = [109, 95, 106]; // The array contains Koalas' points
+        const minAvePoint = 100; // The minimum average point that each of teams had to earn.
+        let dLen = dolp_points.length;
+        let kLen = koal_points.length;
+        let dAve = 0; // The variable contains the average point of Dolphins
+        let kAve = 0; // The variable contains the average point of Dolphins
+        let msg = ""; // The variable contains the message that will be printed out the console.
+
+        // Update value for dAve variable
+        for (let i = 0; i < dLen; i++) {
+          dAve += dolp_points[i];
+        }
+        dAve /= dLen;
+
+        // Update value for kAve variable
+        for (let i = 0; i < kLen; i++) {
+          kAve += koal_points[i];
+        }
+        kAve /= kLen;
+
+        // Specify which team won or they drew with each other
+        if (dAve < kAve && kAve >= minAvePoint) {
+          msg = "Đội Koalas thắng";
+        } else if (dAve == kAve && dAve >= minAvePoint) {
+          msg = "Hai đội hòa nhau";
+        } else if (dAve > kAve && dAve >= minAvePoint) {
+          msg = "Đội Dolphins thắng";
+        } else {
+          msg = "Không có đội nào đạt điểm trung bình tối thiểu";
+        }
+
+        document.getElementById("p_e16_6_1_bonus2").innerHTML = msg;
+        // Show the value of msg out the console.
+        console.log(msg);
+      };
+    </script>
+  </body>
+</html>

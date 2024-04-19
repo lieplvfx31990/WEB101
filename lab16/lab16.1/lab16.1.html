@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>lab16.1. chuyển đổi kiểu và ép kiểu</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./images/favicon.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="container mt-3">
+      <h3>Chuyển Đổi Kiểu và Ép Kiểu.</h3>
+      <ol>
+        <li>
+          <h6>Dự đoán kết quả của 5 phép toán sau mà không cần thực thi:</h6>
+          <p style="color: orange"><strong>NOTE:</strong></p>
+          <p style="color: orange">
+            Trong phép trừ có toán hạng (operand) là string, toán hạng string sẽ
+            tự động ép kiểu thành number. Kết quả trả về kiểu number.
+          </p>
+          <p style="color: orange">
+            Trong phép cộng có toán hạng (operand) là number và string, toán
+            hạng number sẽ tự động ép kiểu thành string. Kết quả trả về kiểu
+            string.
+          </p>
+          <p>'9' - '5'; <span style="color: blue">===&gt; 4 (number)</span></p>
+          <p>
+            '19' - '13' + '17';
+            <span style="color: blue">===&gt; 617 (string)</span>
+          </p>
+          <p>
+            '19' - '13' + 17;
+            <span style="color: blue">===&gt; 23 (number)</span>
+          </p>
+          <p>
+            '123' &lt; 57;
+            <span style="color: blue">===&gt; false (boolean)</span>
+          </p>
+          <p>
+            5 + 6 + '4' + 9 - 4 - 2;
+            <span style="color: blue">===&gt; 1143 (number)</span>
+          </p>
+        </li>
+        <li>
+          <h6>Thực hiện các phép toán để kiểm tra xem bạn đoán đúng không.</h6>
+          <p>'9' - '5';<span id="op00Id" style="color: brown"></span></p>
+          <p>
+            '19' - '13' + '17';<span id="op01Id" style="color: brown"></span>
+          </p>
+          <p>
+            '19' - '13' + 17; <span id="op02Id" style="color: brown"></span>
+          </p>
+          <p>'123' &lt; 57; <span id="op03Id" style="color: brown"></span></p>
+          <p>
+            5 + 6 + '4' + 9 - 4 - 2;
+            <span id="op04Id" style="color: brown"></span>
+          </p>
+        </li>
+      </ol>
+      <button id="btnGess" type="button">Check the Guesses</button>
+    </div>
+    <script>
+      const op00 = document.querySelector("#op00Id");
+      const op01 = document.querySelector("#op01Id");
+      const op02 = document.querySelector("#op02Id");
+      const op03 = document.querySelector("#op03Id");
+      const op04 = document.querySelector("#op04Id");
+      let op00Result = "9" - "5";
+      let op01Result = "19" - "13" + "17";
+      let op02Result = "19" - "13" + 17;
+      let op03Result = "123" < 57;
+      let op04Result = 5 + 6 + "4" + 9 - 4 - 2;
+      let op00Type = typeof op00Result;
+      let op01Type = typeof op01Result;
+      let op02Type = typeof op02Result;
+      let op03Type = typeof op03Result;
+      let op04Type = typeof op04Result;
+      btnGess.onclick = () => {
+        op00.textContent = `===> ${op00Result} (${op00Type})`;
+        op01.textContent = `===> ${op01Result} (${op01Type})`;
+        op02.textContent = `===> ${op02Result} (${op02Type})`;
+        op03.textContent = `===> ${op03Result} (${op03Type})`;
+        op04.textContent = `===> ${op04Result} (${op04Type})`;
+      };
+    </script>
+  </body>
+</html>

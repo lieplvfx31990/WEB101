@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>lab16.3 logic operators</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./images/favicon.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="./lab16.3.js"></script> -->
+  </head>
+  <body>
+    <div class="container mt-3">
+      <h3>Lab 16.3</h3>
+      <div
+        class="container my-3 py-3 px-3"
+        style="background-color: aquamarine"
+      >
+        <p style="font-size: larger; font-weight: bolder">Logic Operators</p>
+        <ol style="font-size: small">
+          <li class="mb-2">
+            Hãy vô hiệu hóa code trước đó để prompt không xuất hiện.
+          </li>
+          <li class="mb-2">
+            Giả sử Sarah đang tìm một quóc gia mới để sinh sống. Cô ấy muốn ở
+            một đất nước sử dụng ngôn ngữ tiếng Anh, dân số ít hơn 50 triệu
+            người và không phải đảo quốc.
+          </li>
+          <li class="mb-2">
+            Bạn cần tạo các biến tương ứng với ngôn ngữ, dân số, có phải đảo
+            quốc không. Giá trị các biến này sẽ được nhập bằng hàm prompt.
+          </li>
+          <li class="mb-2">
+            Hãy viết một câu lệnh if giúp Sarah tìm kiếm quốc gia phù hợp. Bạn
+            cần viết điều kiện đánh giá tất cả các tiêu chí của Sarah. Hãy dành
+            thời gian thực hiện điều này.
+          </li>
+          <li class="mb-2">
+            Nếu đất nước nhập vào phù hợp, in ra string phù hợp. Ví dụ bạn nhập
+            là: Portugal thì in ra kết quả tương ứng như sau: 'You should live
+            in Portugal :)'. Ngược lại, hãy in 'Portugal does not meet your
+            criteria :('
+          </li>
+          <li class="mb-2">
+            Có thể đất nước mà bạn nhập không đáp ứng toàn bộ tiêu chí. Hãy quay
+            trở lại và thay đổi tạm thời nột số biến để điều kiện trở nên đúng
+            (trừ khi bạn sống ở Canada).
+          </li>
+        </ol>
+        <p style="font-size: larger; font-weight: bolder">Suggestive data</p>
+        <table
+          class="table table-bordered"
+          style="width: 100%; font-size: small"
+        >
+          <thead class="table-primary">
+            <tr>
+              <th>NATION</th>
+              <th>LANGUAGE</th>
+              <th>POPULATION</th>
+              <th>IS AN ISLAND?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>KENYA</td>
+              <td>Swahili, English</td>
+              <td>51526000</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>LIBERIA</td>
+              <td>English</td>
+              <td>5506280</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>PORTUGAL</td>
+              <td>Portuguese</td>
+              <td>10467366</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>UNITED ARAB EMIRATES (UAE)</td>
+              <td>Emirati Arabic, English</td>
+              <td>9282410</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>SINGAPORE</td>
+              <td>Malay, English</td>
+              <td>5917600</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>VIETNAM</td>
+              <td>Vietnamese</td>
+              <td>100300000</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>SAUDI ARABIA</td>
+              <td>Arabic</td>
+              <td>32175224</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>SWITZERLAND</td>
+              <td>German, French, Italian, Romansh</td>
+              <td>8902308</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>SWEDEN</td>
+              <td>Swedish</td>
+              <td>10540886</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>NORWAY</td>
+              <td>Norwegian</td>
+              <td>5550203</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>FINLAND</td>
+              <td>Finnish, Swedish</td>
+              <td>5604558</td>
+              <td>No</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br />
+      <h3>Thực hành</h3>
+      <div
+        class="container my-3 py-3 px-3"
+        style="background-color: rgb(218, 218, 218)"
+      >
+        <p style="font-size: larger; font-weight: bolder">
+          Using logic operators
+        </p>
+        <div
+          class="container my-3 py-1 bg-white"
+          style="border-left: solid 4px cyan; font-size: small"
+        >
+          <p>
+            <span style="color: green"
+              >// Using prompt() method to enter a country name (UAE is a
+              suggestive value)</span
+            ><br />
+            <span style="color: blue">let</span> countryName =
+            <span style="color: blue">prompt</span>(<span style="color: brown"
+              >"Country name:"</span
+            >,
+            <span style="color: brown">"United Arab Emirates (UAE)"</span
+            >);<br />
+          </p>
+          <p>
+            <span style="color: green"
+              >// Using prompt() method to enter languages which are used in
+              that country</span
+            ><br />
+            <span style="color: blue">let</span> cLanguages =
+            <span style="color: blue">prompt</span>(<span style="color: brown"
+              >"Languages:"</span
+            >,
+            <span style="color: brown">"Emirati Arabtic, English"</span>);<br />
+          </p>
+
+          <p>
+            <span style="color: green"
+              >// Using prompt() method to enter the population of the
+              considered country</span
+            ><br />
+            <span style="color: blue">let</span> cPopulation =
+            <span style="color: blue">Number</span>(<span style="color: blue"
+              >prompt</span
+            >(<span style="color: brown">"Population (millions):"</span>,
+            <span style="color: brown">"9.23"</span>));<br />
+          </p>
+
+          <p>
+            <span style="color: green"
+              >// Using prompt() method to specify if the considered country is
+              an Island or not</span
+            ><br />
+            <span style="color: blue">let</span> isAnIsland =
+            <span style="color: blue">prompt</span>(<span
+              style="color: orangered"
+              >`Is ${countryName} an Island? (yes / no)`</span
+            >, <span style="color: brown">"no"</span>).<span
+              style="color: blueviolet"
+              >toUpperCase()</span
+            >;<br />
+          </p>
+          <p>
+            <span style="color: green"
+              >// Check if the considered country's information satisfies
+              Sarah's requirement </span
+            ><br />
+            <span style="color: blue">let</span> meetCriteria = cPopulation &lt;
+            <span style="color: red">50</span> && cLanguage.<span
+              style="color: blue"
+              >includes(</span
+            ><span style="color: brown">"ENGLISH"</span>) && !(isAnIsland ==
+            <span style="color: brown">"YES"</span>);<br />
+            <span style="color: blue">if</span> (meetCriteria) {<br />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: blue"
+              >console</span
+            >.log(<span style="color: orangered"
+              >`You should live in ${countryName} :)`</span
+            >);<br />}
+            <span style="color: blue">else</span>
+            {<br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue"
+              >console</span
+            >.log(<span style="color: orangered"
+              >`${countryName} does not meet your criteria :(`</span
+            >);<br />}
+          </p>
+        </div>
+        <p style="font-size: larger; font-weight: bolder">Kiểm tra kết quả</p>
+        <table class="table table-bordered">
+          <thead>
+            <th style="text-align: center">
+              Output message<br /><span
+                style="font-size: small; font-weight: normal"
+                >(the same as what is printed on the console)</span
+              >
+            </th>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="tdomsg">&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+        <div
+          style="display: flex; justify-content: center; align-items: center"
+        >
+          <button id="brunlab" type="button" class="btn btn-primary">
+            Enter Brief Information of a Country
+          </button>
+        </div>
+      </div>
+    </div>
+    <script>
+      const paraAnsToSarah = document.querySelector("#tdomsg");
+      const btnrunlab = document.querySelector("#brunlab");
+
+      btnrunlab.onclick = () => {
+        let countryName = prompt("Nation name:", "United Arab Emirates (UAE)");
+        let cLanguage = prompt(
+          "Language:",
+          "Emirati Arabtic, English"
+        ).toUpperCase();
+        let cPopulation = Number(prompt("Population (millions):", "9.23"));
+        let isAnIsland = prompt(
+          `Is ${countryName} an Island? (yes / no)`,
+          "no"
+        ).toUpperCase();
+        let meetCriteria =
+          cPopulation < 50 &&
+          cLanguage.includes("ENGLISH") &&
+          !(isAnIsland == "YES");
+        if (meetCriteria) {
+          console.log(`You should live in ${countryName} :)`);
+          paraAnsToSarah.textContent = `You should live in ${countryName} :)`;
+        } else {
+          console.log(`${countryName} does not meet your criteria :(`);
+          paraAnsToSarah.textContent = `${countryName} does not meet your criteria :(`;
+        }
+      };
+    </script>
+  </body>
+</html>
