@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vn">
+  <head>
+    <title>lab18.4.Vòng lặp For</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./icons/favicon.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="container my-3">
+      <h3>Lab 18.4</h3>
+      <div
+        class="container my-3 py-3 px-3"
+        style="background-color: aquamarine"
+      >
+        <p style="font-size: large; font-weight: bold">Vòng lặp For (5 phút)</p>
+        <ol>
+          <li>
+            Ở đất nước bạn có các cuộc bầu cử . Ở một thị trấn nhỏ, chỉ có 50 cử
+            tri. Sử dụng vòng lặp for để mô phỏng 50 cử tri này, bằng cách in
+            string sau ra console (cho các số từ 1 đến 50): 'Voter number 1 is
+            curently voting'.
+          </li>
+        </ol>
+      </div>
+      <br />
+      <h3>Thực hành</h3>
+      <div
+        class="container my-3 py-3 px-3"
+        style="background-color: rgb(218, 218, 218)"
+      >
+        <p style="font-size: large; font-weight: bold">
+          <span style="color: blue">for</span> loops in JavaScript
+        </p>
+        <div
+          class="container my-3 py-1 bg-white"
+          style="border-left: solid 4px cyan; font-size: small"
+        >
+          <p>
+            <span style="color: blue">for</span> (let i =
+            <span style="color: red">1</span>; i &lt;=
+            <span style="color: red">50</span>; i++) {<br />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: blue"
+              >console</span
+            >.log(<span style="color: orangered"
+              >`Voter number ${i} is curently voting`</span
+            >);<br />}
+          </p>
+        </div>
+        <p>
+          <span style="font-size: large; font-weight: bold"
+            >Kiểm tra kết quả</span
+          ><br />
+          <span style="font-size: small; font-weight: normal"
+            >(Mở 'Web developer tools' của trình duyệt web để xem kết quả)</span
+          >
+        </p>
+        <div
+          class="pt-2 bg-white"
+          style="
+            text-align: center;
+            border-left: solid 1px grey;
+            border-right: solid 1px grey;
+            border-top: solid 1px grey;
+          "
+        >
+          <strong>Output message</strong><br /><span
+            style="font-size: small; font-weight: normal"
+            >(Similar to what printed on the console)</span
+          >
+        </div>
+        <textarea
+          readonly
+          id="outtext"
+          style="
+            overflow-y: scroll;
+            height: 80px;
+            width: 100%;
+            font-size: small;
+          "
+          class="mb-3 py-1 px-2"
+        ></textarea>
+        <div
+          style="display: flex; justify-content: center; align-items: center"
+        >
+          <button type="button" class="btn btn-primary" onclick="runloop()">
+            Run loop
+          </button>
+        </div>
+      </div>
+    </div>
+    <script>
+      function runloop() {
+        for (let i = 1; i <= 50; i++) {
+          console.log(`Voter number ${i} is curently voting`);
+          document.getElementById("outtext").innerHTML +=
+            `Voter number ${i} is curently voting` + "\n";
+        }
+      }
+    </script>
+  </body>
+</html>

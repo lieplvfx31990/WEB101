@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="vn">
+  <head>
+    <title>lab18.6.Vòng lặp ngược và vòng lặp trong vòng lặp</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./icons/favicon.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="container my-3">
+      <h3>Lab 18.6</h3>
+      <div
+        class="container my-3 py-3 px-3"
+        style="background-color: aquamarine"
+      >
+        <p style="font-size: large; font-weight: bold">
+          Vòng lặp ngược và vòng lặp trong vòng lặp (15 phút)
+        </p>
+        <ol style="font-size: small">
+          <li class="mb-2">
+            Lưu trử array của những array này vào biến 'listOfNeighbours'
+            [['Canada', 'Mexico'], ['Spain'], ['Norway', 'Sweden', 'Russia']];
+          </li>
+          <li class="mb-2">
+            Nếu như các mảng con có ít nhất hai phần tử, in ra lần lượt phần tử
+            từ thứ 2 trở đi. Ví dụ với dữ liệu như trên sẽ in ra.<br />
+            <strong>Sweden</strong><br />
+            <strong>Mexico</strong><br />
+            <strong>Russia</strong>
+          </li>
+          <li class="mb-2">
+            Bạn sẽ cần một vòng lặp bên trong vòng lặp cho điều này. Điều này
+            thực sự hơi phức tạp, vì vậy đừng lo lắng nếu nó quá khó đối với
+            bạn! Bạn sẽ giải quyết được vấn đề này.
+          </li>
+        </ol>
+      </div>
+      <br />
+      <h3>Thực hành</h3>
+      <div
+        class="container my-3 py-3 px-3"
+        style="background-color: rgb(218, 218, 218)"
+      >
+        <p style="font-size: large; font-weight: bold">
+          Reverse <span style="color: blue">for</span> loop for array countdown,
+          and nested <span style="color: blue">for</span> loop in JavaScript
+        </p>
+        <div
+          class="container my-3 py-1 bg-white"
+          style="border-left: solid 4px cyan; font-size: small"
+        >
+          <p>
+            <span style="color: green"
+              >// Declare array of listOfNeighbours</span
+            ><br />
+            <span style="color: blue">const</span> listOfNeighbours = [<br />&nbsp;&nbsp;[<span
+              style="color: brown"
+              >'Canada'</span
+            >,
+            <span style="color: brown">'Mexico'</span>],<br />&nbsp;&nbsp;[<span
+              style="color: brown"
+              >'Spain'</span
+            >],<br />&nbsp;&nbsp;[<span style="color: brown">'Norway'</span>,
+            <span style="color: brown">'Sweden'</span>,
+            <span style="color: brown">'Russia'</span>]<br />];
+          </p>
+          <p>
+            <span style="color: green"
+              >// For all sub-arrays of listOfNeighbours, check if each of them </span
+            ><br />
+            <span style="color: green"
+              >// has at least 2 elements; If it's true, print out their
+              elements </span
+            ><br />
+            <span style="color: green"
+              >// beginning from the second ones of each sub-array,
+              respectively.</span
+            ><br />
+            <span style="color: green"
+              >// Perform the process in the direction from the last sub-array
+              to the</span
+            ><br />
+            <span style="color: green"
+              >// first sub-array of listOfNeighbours</span
+            ><br />
+            <span style="color: blue">let</span> maxLen = 0;<br />
+            <span style="color: blue">let</span> selectedNeighbours =
+            [];&nbsp;&nbsp;<span style="color: green"
+              >// The array holds elements that will be printed out</span
+            ><br />
+            <span style="color: blue">for</span> (<span style="color: blue"
+              >let</span
+            >
+            j = <span style="color: red">1</span>; ; j++) {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue">for</span> (<span
+              style="color: blue"
+              >let</span
+            >
+            i = listOfNeighbours.<span style="color: blue">length</span> -
+            <span style="color: red">1</span>; i &gt;=
+            <span style="color: red">0</span>; i--) {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: blue"
+              >let</span
+            >
+            subArrLen = listOfNeighbours[i].<span style="color: blue"
+              >length</span
+            >;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;maxLen =
+            maxLen < subArrLen ? subArrLen : maxLen;
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: blue"
+              >if</span
+            >
+            (subArrLen &gt; j) {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;selectedNeighbours.<span
+              style="color: blue"
+              >push</span
+            >(listOfNeighbours[i][j]);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+            <span style="color: blue">else</span>
+            {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: darkred"
+              >continue</span
+            >;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: blue"
+              >if</span
+            >
+            (j > maxLen) <span style="color: darkred">break</span>;<br />}
+          </p>
+          <p>
+            <span style="color: green"
+              >// Print the elements of selectedNeighbours line by line</span
+            ><br />
+            <span style="color: blue">for</span> (<span style="color: blue"
+              >let</span
+            >
+            cnt = <span style="color: red">0</span>; cnt &lt;
+            selectedNeighbours.<span style="color: blue">length</span>; cnt++)
+            {<br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue"
+              >console</span
+            >.log(selectedNeighbours[cnt]);<br />}
+          </p>
+        </div>
+        <p style="font-size: large; font-weight: bold">Kiểm tra kết quả</p>
+        <div
+          class="pt-2 bg-white"
+          style="
+            text-align: center;
+            border-left: solid 1px grey;
+            border-right: solid 1px grey;
+            border-top: solid 1px grey;
+          "
+        >
+          <strong>Output message</strong><br /><span
+            style="font-size: small; font-weight: normal"
+            >(Similar to what printed on the console)</span
+          >
+        </div>
+        <textarea
+          readonly
+          id="outtext"
+          style="
+            overflow-y: scroll;
+            height: 80px;
+            width: 100%;
+            font-size: small;
+            font-weight: bold;
+          "
+          class="mb-3 py-1 px-2"
+        ></textarea>
+        <div
+          style="display: flex; justify-content: center; align-items: center"
+        >
+          <button type="button" class="btn btn-primary" onclick="runloop()">
+            Run Lab18.6
+          </button>
+        </div>
+      </div>
+    </div>
+    <script>
+      function runloop() {
+        // Declare array of listOfNeighbours
+        const listOfNeighbours = [
+          ["Canada", "Mexico"],
+          ["Spain"],
+          ["Norway", "Sweden", "Russia"],
+        ];
+
+        // For all sub-arrays of listOfNeighbours, check if each of them
+        // has at least 2 elements; If it's true, print out their elements
+        // beginning from the second ones of each sub-array, respectively.
+        // Perform the process in the direction from the last sub-array to the
+        // first sub-array of listOfNeighbours
+        let maxLen = 0;
+        let selectedNeighbours = []; // The array holds elements that will be printed out
+        for (let j = 1; ; j++) {
+          for (let i = listOfNeighbours.length - 1; i >= 0; i--) {
+            let subArrLen = listOfNeighbours[i].length;
+            maxLen = maxLen < subArrLen ? subArrLen : maxLen;
+            if (subArrLen > j) {
+              selectedNeighbours.push(listOfNeighbours[i][j]);
+            } else {
+              continue;
+            }
+          }
+          if (j > maxLen) break;
+        }
+        // Print the elements of selectedNeighbours line by line
+        for (let cnt = 0; cnt < selectedNeighbours.length; cnt++) {
+          console.log(selectedNeighbours[cnt]);
+          document.getElementById("outtext").innerHTML +=
+            selectedNeighbours[cnt] + "\n";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="vn">
+  <head>
+    <title>lab 18.3 Phương thức Object</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./icons/favicon.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/lab18.3.js"></script>
+  </head>
+  <body>
+    <div class="container my-3">
+      <h3>Lab 18.3</h3>
+      <div
+        class="container my-3 py-3 px-3"
+        style="background-color: aquamarine"
+      >
+        <p style="font-size: larger; font-weight: bolder">
+          Phương thức Object (15 phút)
+        </p>
+        <ol style="font-size: small">
+          <li>
+            Thêm một phương thức có tên là 'describe' vào object 'myCountry'.
+            Phương thức này sẽ in một string ra console với nội dung như sau:
+            "Finland has 6 million finnish-speaking people, 3 neighbours
+            countries and a capital called Helsinki" nhưng lần này sử dụng từ
+            khóa 'this'.
+          </li>
+          <li>Gọi phương thức 'describe'</li>
+          <li>
+            Thêm phương thức 'checkIsland' vào object 'myCountry'. Phương thức
+            này sẽ thiết lập một thuộc tính mới trên object là 'isIsland',
+            'isIsland' sẽ là giá trị true nếu không có nước láng giềng, ngược
+            lại là false. Sử dụng toán tử điều kiện để đặt giá trị cho thuộc
+            tính.
+          </li>
+        </ol>
+      </div>
+      <br />
+      <h3>Thực hành</h3>
+      <div
+        class="container my-3 py-3 px-3"
+        style="background-color: rgb(218, 218, 218)"
+      >
+        <p style="font-size: large; font-weight: bold">
+          JavaScript Object's methods
+        </p>
+        <div
+          class="container my-3 py-1 bg-white"
+          style="border-left: solid 4px cyan; font-size: small"
+        >
+          <p>
+            <span style="color: green"
+              >// The Object contains brief information about my country</span
+            ><br />
+
+            <span style="color: blue">const</span> myCountry = {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;country:
+            <span style="color: brown">"Vietnam"</span>,<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;capital:
+            <span style="color: brown">"Hanoi"</span>,<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;language:
+            <span style="color: brown">"Vietnamese"</span>,<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;population:
+            <span style="color: red">100.3</span>,&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: green"
+              >// in million</span
+            ><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;neighbours: [<span style="color: brown"
+              >"China"</span
+            >, <span style="color: brown">"Laos"</span>,
+            <span style="color: brown">"Cambodia"</span>],<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: green"
+              >// Adds a method named 'describe' to object myCountry</span
+            ><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;describe:
+            <span style="color: blue">function</span>() {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: blue"
+              >let</span
+            >
+            retstr =
+            <span style="color: orangered"
+              >`${this.country} has ${this.population} million
+              ${this.language}-speaking people, ${this.neighbours.length}
+              neighbours countries and a capital called ${this.capital}.`</span
+            >;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: blue"
+              >console</span
+            >.log(retstr);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: green"
+              >// The following 'return' statement is added for an illustration
+              on this page</span
+            ><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: blue"
+              >return</span
+            >
+            retstr;<br />&nbsp;&nbsp;&nbsp;&nbsp;},<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: green"
+              >// Adds a method named 'checkIsland' to the object
+              myCountry</span
+            ><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;checkIsland:
+            <span style="color: blue">function</span>() {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: green"
+              >// Adds a property named 'isIsland' to object myCountry</span
+            ><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: blue"
+              >this</span
+            >.isIsland = <span style="color: blue">this</span>.neighbours.length
+            == 0;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: green"
+              >// The following 'return' statement is added for an illustration
+              on this page</span
+            ><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: blue"
+              >return</span
+            >
+            <span style="color: blue">this</span>.neighbours.length == 0;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}
+          </p>
+          <p>
+            <span style="color: green">// Calls method 'describe'</span><br />
+            myCountry.describe();
+          </p>
+          <p>
+            <span style="color: green"
+              >//Check if considered country is an Island.</span
+            ><br />
+            myCountry.checkIsland();<br />
+            <span style="color: blue">console</span>.log(myCountry[<span
+              style="color: brown"
+              >'isIsland'</span
+            >]);
+          </p>
+        </div>
+        <p style="font-size: large; font-weight: bold">Kiểm tra kết quả</p>
+        <table class="table table-bordered">
+          <thead>
+            <th style="text-align: center">
+              Output message<br /><span
+                style="font-size: small; font-weight: normal"
+                >(The same as what printed on the console)</span
+              >
+            </th>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="tdomsg" class="text-info">&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+        <button
+          type="button"
+          class="btn btn-primary mb-3"
+          onclick="calldescribe()"
+        >
+          Call method 'describe'
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary mb-3"
+          onclick="callcheckisisland()"
+        >
+          Check if considered country is an Island
+        </button>
+      </div>
+    </div>
+    <script>
+      function calldescribe() {
+        // Calls method 'describe'
+        let retval = myCountry.describe();
+        document.getElementById("tdomsg").innerHTML = retval;
+      }
+
+      function callcheckisisland() {
+        //Check if considered country is an Island.
+        let retval = myCountry.checkIsland();
+        console.log(myCountry["isIsland"]);
+        document.getElementById("tdomsg").innerHTML = retval;
+      }
+    </script>
+  </body>
+</html>
