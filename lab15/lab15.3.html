@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="vn">
+  <head>
+    <title>lab 15.3. các toán tử cơ bản.</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./images/favicon.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="lab15.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="container my-3 pb-3">
+      <h3>Lab 15.3</h3>
+      <div
+        class="container my-3 py-3 py-3"
+        style="background-color: aquamarine"
+      >
+        <p style="font-size: larger; font-weight: bolder">
+          Các Toán Tử Cơ Bản.
+        </p>
+        <ol>
+          <li>
+            Nếu quốc gia của bạn bị chia cắt làm hai miền, mỗi miền gồm một nửa
+            dân số của quốc gia, vậy sẽ có bao nhiêu người sống ở mỗi miền? Hãy
+            sử dụng giá trị từ biến population để hoàn thành yêu cần này, in ra
+            màn hình console giá trị của <strong>population chia 2.</strong>
+          </li>
+          <li>
+            Tăng giá trị của biến <strong>population</strong> thêm 1 và in kết
+            quả ra console.
+          </li>
+          <li>
+            Phần Lan có dân số là 6 triệu người. Kiểm tra xem quốc gia bạn có
+            nhiều dân hơn Phần Lan hay không? Bạn cần in ra console xem giá trị
+            <strong>population</strong> có lớn hơn 6 triệu không?
+          </li>
+          <li>
+            Dân số trung bình của một quốc gia là 33 triệu người. Kiểm tra xem
+            quốc gia bạn có ít dân hơn so với các mức dân số trung bình không?
+          </li>
+          <li>
+            Dựa trên các biến bạn đã tạo, hãy tạo một biến mới là
+            '<strong>description</strong>', trong đó có chứa một string có định
+            dạng sau: '<strong>&lt;country&gt;</strong>' and its
+            '<strong>&lt;population&gt;</strong>' million people speak
+            <strong>&lt;language&gt;</strong>'. Bạn cần thay thay thế các giá
+            trị trong &lt;&gt; thành các biến tương ứng.
+          </li>
+        </ol>
+      </div>
+      <h3>Thực hành</h3>
+      <div
+        class="container my-3 py-3 px-3"
+        style="background-color: rgb(218, 218, 218)"
+      >
+        <p style="font-size: larger; font-weight: bolder">
+          Perform some common operators
+        </p>
+        <div
+          class="container my-3 py-3 px-3 bg-white"
+          style="border-left: solid 4px cyan; font-size: small"
+        >
+          <p>
+            <span style="color: green">// Declare some variables</span><br />
+            <span style="color: blue">const</span> country =
+            <span style="color: brown">"Vietnam"</span>;<br />
+            <span style="color: blue">const</span> continent =
+            <span style="color: brown">"Asia"</span>;<br />
+            <span style="color: blue">const</span> isIsland =
+            <span style="color: blue">false</span>;<br />
+            <span style="color: blue">const</span> language =
+            <span style="color: brown">"Vietnamese"</span>;<br />
+            <span style="color: blue">let</span> population =
+            <span style="color: red">100.3</span>;&nbsp;&nbsp;<span
+              style="color: green"
+              >// In million</span
+            >
+          </p>
+          <p>
+            <span style="color: green">// Perform division operator</span><br />
+            <span style="color: blue">console</span>.log(population /
+            <span style="color: red">2</span>);
+          </p>
+          <p>
+            <span style="color: green">// Perform increment operator</span
+            ><br />
+            population++;<br />
+            <span style="color: blue">console</span>.log(population);<br />
+          </p>
+          <p>
+            <span style="color: green"
+              >// Declare a variable that holds the value of Finland's
+              population</span
+            ><br />
+            <span style="color: blue">let</span> fin_population =
+            <span style="color: red">6</span>;&nbsp;&nbsp;<span
+              style="color: green"
+              >// in million</span
+            ><br />
+            <span style="color: green">// Perform comparison operator (>)</span
+            ><br />
+            <span style="color: blue">console</span>.log(population >
+            fin_population);
+          </p>
+          <p>
+            <span style="color: green"
+              >// Declare a variable that holds the average population of the
+              World</span
+            ><br />
+            <span style="color: blue">let</span> average_population =
+            <span style="color: red">33</span>;&nbsp;&nbsp;<span
+              style="color: green"
+              >// in million</span
+            ><br />
+            <span style="color: green"
+              >// Perform comparison operator (&lt;)</span
+            ><br />
+            <span style="color: blue">console</span>.log(population <
+            average_population);
+          </p>
+          <p>
+            <span style="color: green"
+              >// Perform string concatenation operator (+)</span
+            ><br />
+            <span style="color: blue">let</span> description = country +
+            <span style="color: brown">" and its "</span> + population +
+            <span style="color: brown">" million people speak "</span> +
+            language;<br />
+            <span style="color: blue">console</span>.log(description);
+          </p>
+        </div>
+        <p style="font-size: larger; font-weight: bolder">Kiểm tra kết quả</p>
+        <table class="table table-bordered">
+          <thead>
+            <th style="width: 32%; text-align: center">
+              output result<br />
+              <span style="font-size: small; font-weight: normal"
+                >(The same as what is printed on the console)</span
+              >
+            </th>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="oresult">&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+        <button id="bitem1" type="button" class="btn btn-info">
+          population / <span style="color: red">2</span>
+        </button>
+        <button id="bitem2" type="button" class="btn btn-info">
+          population++
+        </button>
+        <button id="bitem3" type="button" class="btn btn-info">
+          population > <span style="color: red">6</span>
+        </button>
+        <button id="bitem4" type="button" class="btn btn-info">
+          population &lt; <span style="color: red">33</span>
+        </button>
+        <button id="bitem5" type="button" class="btn btn-info">
+          description = ?
+        </button>
+      </div>
+    </div>
+    <script>
+      const btnitm1 = document.querySelector("#bitem1");
+      const btnitm2 = document.querySelector("#bitem2");
+      const btnitm3 = document.querySelector("#bitem3");
+      const btnitm4 = document.querySelector("#bitem4");
+      const btnitm5 = document.querySelector("#bitem5");
+
+      // Declare some variables
+      const country = "Vietnam";
+      const continent = "Asia";
+      const isIsland = false;
+      const language = "Vietnamese";
+      let population = 100.3; // In million
+
+      btnitm1.onclick = () => {
+        // Perform division operator
+        console.log(population / 2);
+        document.getElementById("oresult").innerHTML = population / 2;
+      };
+      btnitm2.onclick = () => {
+        // Perform increment operator
+        population++;
+        console.log(population);
+        document.getElementById("oresult").innerHTML = population;
+      };
+      btnitm3.onclick = () => {
+        // Declare a variable that holds the value of Finland's population
+        let fin_population = 6; // in million
+        // Perform comparison operator (>)
+        console.log(population > fin_population);
+        document.getElementById("oresult").innerHTML =
+          population > fin_population;
+      };
+      btnitm4.onclick = () => {
+        // Declare a variable that holds the average population of the World
+        let average_population = 33; // in million
+        // Perform comparison operator (<)
+        console.log(population < average_population);
+        document.getElementById("oresult").innerHTML =
+          population < average_population;
+      };
+      btnitm5.onclick = () => {
+        // Perform string concatenation operator (+)
+        let description =
+          country +
+          " and its " +
+          population +
+          " million people speak " +
+          language;
+        console.log(description);
+        document.getElementById("oresult").innerHTML = description;
+      };
+    </script>
+  </body>
+</html>

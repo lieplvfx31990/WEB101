@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="vn">
+  <head>
+    <title>lab15.6. bài toán tổng hợp</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./images/favicon.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="lab15.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="container mt-3">
+      <h3>Lab 15.6.1</h3>
+
+      <div
+        class="container my-3 py-3 px-3"
+        style="background-color: aquamarine"
+      >
+        <p style="font-size: medium; font-weight: bolder">
+          So Sánh Chỉ Số BMI (phần 1)
+        </p>
+        <p style="font-size: small">
+          Mark và John đang cố so sánh chỉ số BMI (Body Mass Index) của họ, được
+          tính bằng công thức:
+          <strong>BMI = mass/[(height)^2] = mass/(height*height)</strong>
+          (<strong>mass</strong> là khối lượng của cơ thể tính bằng
+          <strong>kg</strong> và <strong>height</strong> là chiều cao của cơ thể
+          tính bằng <strong>mét</strong>).
+        </p>
+        <ol style="font-size: small">
+          <li class="mb-3">
+            <h6>Nhiệm vụ của bạn:</h6>
+            <ul>
+              <li>
+                Lưu khối lượng và chiều cao của Mark và John vào các biến.
+              </li>
+              <li>
+                Tính chỉ số BMI của John và Mark theo công thức (bạn có thể tính
+                cả hai).
+              </li>
+              <li>
+                Tạo biến Boolean 'markHeigherBMI' chứa thông tin về việc liệu
+                chỉ số BMI của Mark có cao hơn BMI của John không.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h6>Dữ liệu kiểm tra:</h6>
+            <ul>
+              <li>
+                Dữ liệu 1: Mark nặng 78kg và cao 1.69m. John nặng 92kg và cao
+                1.95m.
+              </li>
+              <li>
+                Dữ liệu 2: Mark nặng 95kg và cao 1.88m. John nặng 85kg và cao
+                1.76m.
+              </li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+      <br />
+      <h3>
+        Thực hành
+        <span style="font-size: medium; font-weight: normal">(phần 1)</span>
+      </h3>
+      <div
+        class="container my-3 py-3 px-3"
+        style="background-color: rgb(218, 218, 218)"
+      >
+        <p style="font-size: larger; font-weight: bolder">Part 1</p>
+        <div
+          class="container my-3 py-1 bg-white"
+          style="border-left: solid 4px cyan; font-size: small"
+        >
+          <p>
+            <span style="color: blue">let</span> markHeight;&nbsp;&nbsp;<span
+              style="color: green"
+              >// Mark's height</span
+            ><br />
+            <span style="color: blue">let</span> markMass;&nbsp;&nbsp;<span
+              style="color: green"
+              >// Mark's mass</span
+            ><br />
+            <span style="color: blue">let</span> johnHeight;&nbsp;&nbsp;<span
+              style="color: green"
+              >// John's height</span
+            ><br />
+            <span style="color: blue">let</span> johnMass;&nbsp;&nbsp;<span
+              style="color: green"
+              >// John's mass</span
+            >
+          </p>
+
+          <p>
+            <span style="color: blue">let</span> markBMI;&nbsp;&nbsp;<span
+              style="color: green"
+              >// Mark's body mass index</span
+            ><br />
+            <span style="color: blue">let</span> johnBMI;&nbsp;&nbsp;<span
+              style="color: green"
+              >// John's body mass index</span
+            ><br />
+            <span style="color: blue">let</span> markHigherBMI;&nbsp;&nbsp;<span
+              style="color: green"
+              >// Mark's BMI higher John's BMI or not</span
+            >
+          </p>
+
+          <p>
+            markMass = <span style="color: red">78</span>;<br />
+            markHeight = <span style="color: red">1.69</span>;<br />
+            johnMass = <span style="color: red">92</span>;<br />
+            johnHeight = <span style="color: red">1.96</span>;<br />
+          </p>
+
+          <p>
+            markBMI = markMass / markHeight **
+            <span style="color: red">2</span>;<br />
+            johnBMI = johnMass / johnHeight **
+            <span style="color: red">2</span>;<br />
+            markHigherBMI = markBMI > johnBMI;<br />
+          </p>
+
+          <p>
+            <span style="color: blue">console</span>.log(<span
+              style="color: brown"
+              >"DỮ LIỆU 1:"</span
+            >);<br />
+            <span style="color: blue">console</span>.log(<span
+              style="color: orangered"
+              >`Mark's mass: ${markMass}`</span
+            >);<br />
+            <span style="color: blue">console</span>.log(<span
+              style="color: orangered"
+              >`Mark's height: ${markHeight}`</span
+            >);<br />
+            <span style="color: blue">console</span>.log(<span
+              style="color: orangered"
+              >`Mark's BMI: ${markBMI.toFixed(2)}`</span
+            >);<br />
+            <span style="color: blue">console</span>.log(<span
+              style="color: orangered"
+              >`John's mass: ${johnMass}`</span
+            >);<br />
+            <span style="color: blue">console</span>.log(<span
+              style="color: orangered"
+              >`John's height: ${johnHeight}`</span
+            >);<br />
+            <span style="color: blue">console</span>.log(<span
+              style="color: orangered"
+              >`John's BMI: ${johnBMI.toFixed(2)}`</span
+            >);<br />
+            <span style="color: blue">console</span>.log(<span
+              style="color: orangered"
+              >`markHigherBMI: ${markHigherBMI}`</span
+            >);
+          </p>
+
+          <p>
+            <span style="color: blue">console</span>.log(<span
+              style="color: brown"
+              >"--------------------------------"</span
+            >;
+          </p>
+
+          <p>
+            markMass = <span style="color: red">95</span>;<br />
+            markHeight = <span style="color: red">1.88</span>;<br />
+            johnMass = <span style="color: red">85</span>;<br />
+            johnHeight = <span style="color: red">1.76</span>;<br />
+          </p>
+
+          <p>
+            markBMI = markMass / markHeight **
+            <span style="color: red">2</span>;<br />
+            johnBMI = johnMass / johnHeight **
+            <span style="color: red">2</span>;<br />
+            markHigherBMI = markBMI > johnBMI;<br />
+          </p>
+
+          <p>
+            <span style="color: blue">console</span>.log(<span
+              style="color: brown"
+              >"DỮ LIỆU 2:"</span
+            >);<br />
+            <span style="color: blue">console</span>.log(<span
+              style="color: orangered"
+              >`Mark's mass: ${markMass}`</span
+            >);<br />
+            <span style="color: blue">console</span>.log(<span
+              style="color: orangered"
+              >`Mark's height: ${markHeight}`</span
+            >);<br />
+            <span style="color: blue">console</span>.log(<span
+              style="color: orangered"
+              >`Mark's BMI: ${markBMI.toFixed(2)}`</span
+            >);<br />
+            <span style="color: blue">console</span>.log(<span
+              style="color: orangered"
+              >`John's mass: ${johnMass}`</span
+            >);<br />
+            <span style="color: blue">console</span>.log(<span
+              style="color: orangered"
+              >`John's height: ${johnHeight}`</span
+            >);<br />
+            <span style="color: blue">console</span>.log(<span
+              style="color: orangered"
+              >`John's BMI: ${johnBMI.toFixed(2)}`</span
+            >);<br />
+            <span style="color: blue">console</span>.log(<span
+              style="color: orangered"
+              >`markHigherBMI: ${markHigherBMI}`</span
+            >);
+          </p>
+        </div>
+        <p style="font-size: larger; font-weight: bolder">Kiểm tra kết quả</p>
+        <table class="table table-bordered">
+          <thead>
+            <th style="text-align: center">
+              Output<br /><span style="font-size: small; font-weight: normal"
+                >(The same as what is printed on the console)</span
+              >
+            </th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span id="o01">&nbsp;</span><br />
+                <span id="o02">&nbsp;</span><br />
+                <span id="o03">&nbsp;</span><br />
+                <span id="o04">&nbsp;</span><br />
+                <span id="o05">&nbsp;</span><br />
+                <span id="o06">&nbsp;</span><br />
+                <span id="o07">&nbsp;</span><br />
+                <span id="o08">&nbsp;</span><br />
+                <span id="o09">&nbsp;</span><br />
+                <span id="o10">&nbsp;</span><br />
+                <span id="o11">&nbsp;</span><br />
+                <span id="o12">&nbsp;</span><br />
+                <span id="o13">&nbsp;</span><br />
+                <span id="o14">&nbsp;</span><br />
+                <span id="o15">&nbsp;</span><br />
+                <span id="o16">&nbsp;</span><br />
+                <span id="o17">&nbsp;</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div
+          style="display: flex; justify-content: center; align-items: center"
+        >
+          <button
+            id="btnrunpart1"
+            type="button"
+            class="btn btn-primary vertical-center"
+          >
+            Run script - part 1
+          </button>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="container mt-3">
+      <h3>Lab 15.6.2</h3>
+      <div
+        class="container my-3 py-3 px-3"
+        style="background-color: aquamarine"
+      >
+        <p style="font-size: large; font-weight: bold">
+          So Sánh Chỉ Số BMI (phần 2)
+        </p>
+        <p style="font-size: small">
+          Sử dụng ví dụ về BMI từ Lab 15.6.1 và code bạn đã viết để cải thiện
+          lại.
+        </p>
+        <p>Nhiệm vụ của bạn:</p>
+        <ul style="font-size: small">
+          <li>
+            In một output tốt ra console, hiển thị ai có chỉ số BMI cao hơn.
+            Thông báo hiển thị sẽ là "Mark BMI is higher than John's!" hoặc
+            "John's BMI is higher than Mark's!".
+          </li>
+          <li>
+            Sử dụng template literal bao gồm các giá trị BMI trong output. Ví
+            dụ: "Mark's BMI (28.3) is higher than John's (23.9)!".
+          </li>
+        </ul>
+        <p style="font-size: small">
+          <strong>Gợi ý:</strong> Sử dụng câu lệnh if/else
+        </p>
+      </div>
+      <h3>
+        Thực hành<span style="font-size: medium; font-weight: normal"
+          >(phần 2)</span
+        >
+      </h3>
+      <div
+        class="container my-3 py-3 px-3"
+        style="background-color: rgb(218, 218, 218)"
+      >
+        <p style="font-size: large; font-weight: bold">Part 2</p>
+        <div
+          class="container my-3 py-1 bg-white"
+          style="border-left: solid 4px cyan; font-size: small"
+        >
+          <p>
+            <span style="color: blue">let</span> markHeight;&nbsp;&nbsp;<span
+              style="color: green"
+              >// Mark's height</span
+            ><br />
+            <span style="color: blue">let</span> markMass;&nbsp;&nbsp;<span
+              style="color: green"
+              >// Mark's mass</span
+            ><br />
+            <span style="color: blue">let</span> johnHeight;&nbsp;&nbsp;<span
+              style="color: green"
+              >// John's height</span
+            ><br />
+            <span style="color: blue">let</span> johnMass;&nbsp;&nbsp;<span
+              style="color: green"
+              >// John's mass</span
+            >
+          </p>
+          <p>
+            <span style="color: blue">let</span> markBMI;&nbsp;&nbsp;<span
+              style="color: green"
+              >// Mark's body mass index</span
+            ><br />
+            <span style="color: blue">let</span> johnBMI;&nbsp;&nbsp;<span
+              style="color: green"
+              >// John's mass</span
+            ><br />
+            <span style="color: blue">let</span> markHigherBMI;&nbsp;&nbsp;<span
+              style="color: green"
+              >// Mark's BMI higher John's BMI or not</span
+            >
+          </p>
+          <p>
+            markMass = <span style="color: red">78</span>;<br />
+            markHeight = <span style="color: red">1.69</span>;<br />
+            johnMass = <span style="color: red">92</span>;<br />
+            johnHeight = <span style="color: red">1.96</span>;
+          </p>
+          <p>
+            markBMI = markMass / markHeight **
+            <span style="color: red">2</span>;<br />
+            johnBMI = johnMass / johnHeight **
+            <span style="color: red">2</span>;<br />
+            markHigherBMI = markBMI > johnBMI;
+          </p>
+          <p>
+            <span style="color: blue">console</span>.log(<span
+              style="color: brown"
+              >"NHIỆM VỤ 1:"</span
+            >);<br />
+            <span style="color: blue">if</span> (markHigherBMI) {<br />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: blue"
+              >console</span
+            >.log(<span style="color: brown"
+              >"Mark's BMI is higher than John's!"</span
+            >);<br />}
+            <span style="color: blue">else</span>
+            {<br />&nbsp;&nbsp;&nbsp;&nbsp;
+            <span style="color: blue">console</span>.log(<span
+              style="color: brown"
+              >"John's BMI is higher than Marks's!"</span
+            >);<br />}<br />
+          </p>
+          <p>
+            <span style="color: blue">console</span>.log(<span
+              style="color: brown"
+              >"------------------------------------"</span
+            >);
+          </p>
+          <p>
+            <span style="color: blue">console</span>.log(<span
+              style="color: brown"
+              >"NHIỆM VỤ 2:"</span
+            >);<br />
+            <span style="color: blue">if</span> (markHigherBMI) {<br />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: blue"
+              >console</span
+            >.log(<span style="color: orangered"
+              >`Mark's BMI (${markBMI.toFixed(2)}) is higher than John's
+              (${johnBMI.toFixed(2)})!`</span
+            >);<br />}
+            <span style="color: blue">else</span>
+            {<br />&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue"
+              >console</span
+            >.log(<span style="color: orangered"
+              >`John's BMI (${johnBMI.toFixed(2)}) is higher than Mark's
+              (${markBMI.toFixed(2)})!`</span
+            >);<br />}
+          </p>
+        </div>
+        <p style="font-size: large; font-weight: bold">Kiểm tra kết quả</p>
+        <table class="table table-bordered">
+          <thead>
+            <th style="text-align: center">
+              Output<br /><span style="font-size: small; font-weight: normal"
+                >(The same as what is printed on the console)</span
+              >
+            </th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span id="x01">&nbsp;</span><br />
+                <span id="x02">&nbsp;</span><br />
+                <span id="x03">&nbsp;</span><br />
+                <span id="x04">&nbsp;</span><br />
+                <span id="x05">&nbsp;</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div
+          style="display: flex; justify-content: center; align-items: center"
+        >
+          <button
+            id="btnrunpart2"
+            type="button"
+            class="btn btn-primary vertical-center"
+          >
+            Run script - part 2
+          </button>
+        </div>
+      </div>
+    </div>
+    <script>
+      const runpart1 = document.querySelector("#btnrunpart1");
+      const runpart2 = document.querySelector("#btnrunpart2");
+
+      runpart1.onclick = () => {
+        let markHeight; // Mark's height
+        let markMass; // Mark's mass
+        let johnHeight; // John's height
+        let johnMass; // John's mass
+
+        let markBMI; // Mark's body mass index
+        let johnBMI; // John's body mass index
+        let markHigherBMI; // Mark's BMI higher John's BMI or not
+
+        markMass = 78;
+        markHeight = 1.69;
+        johnMass = 92;
+        johnHeight = 1.96;
+
+        markBMI = markMass / markHeight ** 2;
+        johnBMI = johnMass / johnHeight ** 2;
+        markHigherBMI = markBMI > johnBMI;
+
+        console.log("DỮ LIỆU 1:");
+        console.log(`Mark's mass: ${markMass}`);
+        console.log(`Mark's height: ${markHeight}`);
+        console.log(`Mark's BMI: ${markBMI.toFixed(2)}`);
+        console.log(`John's mass: ${johnMass}`);
+        console.log(`John's height: ${johnHeight}`);
+        console.log(`John's BMI: ${johnBMI.toFixed(2)}`);
+        console.log(`markHigherBMI: ${markHigherBMI}`);
+
+        document.getElementById("o01").innerHTML = "DỮ LIỆU 1:";
+        document.getElementById("o02").innerHTML = `Mark's mass: ${markMass}`;
+        document.getElementById(
+          "o03"
+        ).innerHTML = `Mark's height: ${markHeight}`;
+        document.getElementById(
+          "o04"
+        ).innerHTML = `Mark's BMI: ${markBMI.toFixed(2)}`;
+        document.getElementById("o05").innerHTML = `John's mass: ${johnMass}`;
+        document.getElementById(
+          "o06"
+        ).innerHTML = `John's height: ${johnHeight}`;
+        document.getElementById(
+          "o07"
+        ).innerHTML = `John's BMI: ${johnBMI.toFixed(2)}`;
+        document.getElementById(
+          "o08"
+        ).innerHTML = `markHigherBMI: ${markHigherBMI}`;
+
+        console.log("--------------------------------");
+        document.getElementById("o09").innerHTML =
+          "--------------------------------";
+
+        markMass = 95;
+        markHeight = 1.88;
+        johnMass = 85;
+        johnHeight = 1.76;
+
+        markBMI = markMass / markHeight ** 2;
+        johnBMI = johnMass / johnHeight ** 2;
+        markHigherBMI = markBMI > johnBMI;
+
+        console.log("DỮ LIỆU 2:");
+        console.log(`Mark's mass: ${markMass}`);
+        console.log(`Mark's height: ${markHeight}`);
+        console.log(`Mark's BMI: ${markBMI.toFixed(2)}`);
+        console.log(`John's mass: ${johnMass}`);
+        console.log(`John's height: ${johnHeight}`);
+        console.log(`John's BMI: ${johnBMI.toFixed(2)}`);
+        console.log(`markHigherBMI: ${markHigherBMI}`);
+
+        document.getElementById("o10").innerHTML = "DỮ LIỆU 2:";
+        document.getElementById("o11").innerHTML = `Mark's mass: ${markMass}`;
+        document.getElementById(
+          "o12"
+        ).innerHTML = `Mark's height: ${markHeight}`;
+        document.getElementById(
+          "o13"
+        ).innerHTML = `Mark's BMI: ${markBMI.toFixed(2)}`;
+        document.getElementById("o14").innerHTML = `John's mass: ${johnMass}`;
+        document.getElementById(
+          "o15"
+        ).innerHTML = `John's height: ${johnHeight}`;
+        document.getElementById(
+          "o16"
+        ).innerHTML = `John's BMI: ${johnBMI.toFixed(2)}`;
+        document.getElementById(
+          "o17"
+        ).innerHTML = `markHigherBMI: ${markHigherBMI}`;
+      };
+
+      runpart2.onclick = () => {
+        let markHeight; // Mark's height
+        let markMass; // Mark's mass
+        let johnHeight; // John's height
+        let johnMass; // John's mass
+
+        let markBMI; // Mark's body mass index
+        let johnBMI; // John's mass
+        let markHigherBMI; // Mark's BMI higher John's BMI or not
+
+        markMass = 78;
+        markHeight = 1.69;
+        johnMass = 92;
+        johnHeight = 1.96;
+
+        markBMI = markMass / markHeight ** 2;
+        johnBMI = johnMass / johnHeight ** 2;
+        markHigherBMI = markBMI > johnBMI;
+
+        console.log("NHIỆM VỤ 1:");
+        document.getElementById("x01").innerHTML = "NHIỆM VỤ 1:";
+        if (markHigherBMI) {
+          console.log("Mark's BMI is higher than John's!");
+          document.getElementById("x02").innerHTML =
+            "Mark's BMI is higher than John's!";
+        } else {
+          console.log("John's BMI is higher than Marks's!");
+          document.getElementById("x02").innerHTML =
+            "John's BMI is higher than Marks's!";
+        }
+
+        console.log("------------------------------------");
+        document.getElementById("x03").innerHTML =
+          "------------------------------------";
+
+        console.log("NHIỆM VỤ 2:");
+        document.getElementById("x04").innerHTML = "NHIỆM VỤ 2:";
+        if (markHigherBMI) {
+          console.log(
+            `Mark's BMI (${markBMI.toFixed(
+              2
+            )}) is higher than John's (${johnBMI.toFixed(2)})!`
+          );
+          document.getElementById(
+            "x05"
+          ).innerHTML = `Mark's BMI (${markBMI.toFixed(
+            2
+          )}) is higher than John's (${johnBMI.toFixed(2)})!`;
+        } else {
+          console.log(
+            `John's BMI (${johnBMI.toFixed(
+              2
+            )}) is higher than Mark's (${markBMI.toFixed(2)})!`
+          );
+          document.getElementById(
+            "x05"
+          ).innerHTML = `John's BMI (${johnBMI.toFixed(
+            2
+          )}) is higher than Mark's (${markBMI.toFixed(2)})!`;
+        }
+      };
+    </script>
+  </body>
+</html>

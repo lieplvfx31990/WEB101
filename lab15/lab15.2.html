@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vn">
+  <head>
+    <title>lab 15.2. let, const và var</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./images/favicon.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="lab15.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="container mt-3">
+      <h3>Lab 15.2</h3>
+      <div
+        class="container my-3 py-3 px-3"
+        style="background-color: aquamarine"
+      >
+        <p style="font-size: larger; font-weight: bolder">let, const và var</p>
+        <ol>
+          <li>
+            Đặt giá trị của '<strong>language</strong>' thành ngôn ngữ được nói
+            ở nơi bạn sống (một số quốc gia có nhiều ngôn ngữ, nhưng chỉ cần
+            chọn một). Ví dụ như '<strong>English</strong>',
+            '<strong>Vietnamese</strong>'.
+          </li>
+          <li>
+            Hãy nghĩ xem những biến nào có thể sử dụng const (những giá trị nào
+            không bao giờ thay đổi?). Sau đó, chuyển các biến mà bạn đã nghĩ ra
+            thành biến khai báo bằng const.
+          </li>
+          <li>
+            Giờ hãy thử thay đổi giá trị một trong các biến trên và quan sát xem
+            điều gì sẽ xảy ra.
+          </li>
+        </ol>
+      </div>
+      <br />
+      <h3>Thực hành</h3>
+      <div
+        class="container my-3 py-3 px-3"
+        style="background-color: rgb(218, 218, 218)"
+      >
+        <p style="font-size:larger; font-weight:bolder">Variables declaration with <span style="color:blue">const</span>, <span style="color:blue">let</span>, and <span style="color:blue">var</span></p>
+        <div class="container my-3 py-1 bg-white" style="border-left:solid 4px cyan; font-size: small;">
+          <p>
+            <span style="color: green;">// Declare some variables with 'let', 'const', and 'var'</span><br>
+            <span style="color: blue;">const</span> country = <span style="color: brown;">"Vietnam"</span>;<br>
+            <span style="color: blue;">const</span> continent = <span style="color: brown;">"Asia"</span>;<br>
+            <span style="color: blue;">let</span> population = <span style="color: red;">100.3</span>;<br>
+            <span style="color: blue;">const</span> isIsland = <span style="color: blue;">false</span>;<br>
+            <span style="color: blue;">var</span> language = <span style="color: brown;">"Vietnamese"</span>;
+          </p>
+          <p>
+            <span style="color: green;">// Try to re-assign some declared variables, see what happens</span><br>
+            <span style="color: blue;">try</span> {<br>&nbsp;&nbsp;&nbsp;&nbsp;isIsland = <span style="color: blue;">true</span>;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">console</span>.log(isIsland);<br>} <span style="color: blue;">catch</span>(const_err) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">console</span>.log(const_err);<br>}<br><br>
+            <span style="color: blue;">try</span> {<br>&nbsp;&nbsp;&nbsp;&nbsp;population = <span style="color: red;">101.4</span>;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">console</span>.log(population);<br>} <span style="color: blue;">catch</span>(let_err) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">console</span>.log(let_err);<br>}<br><br>
+            <span style="color: blue;">try</span> {<br>&nbsp;&nbsp;&nbsp;&nbsp;language = <span style="color: brown;">"English"</span>;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">console</span>.log(language);<br>} <span style="color: blue;">catch</span>(var_err) {<br>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">console</span>.log(var_err);<br>}
+          </p>
+        </div>
+        <p style="font-size: larger; font-weight: bolder;">Kiểm tra kết quả</p>
+        <table class="table table-bordered">
+          <tr>
+            <th style="width: 20%" class="text-primary">isIsland</th>
+            <td id="ch_const" style="width: 80%;" class="text-primary">&nbsp;</td>
+          </tr>
+          <tr>
+            <th style="width: 20%" class="text-danger">const_err</th>
+            <td id="er_const" style="width: 80%;" class="text-danger">&nbsp;</td>
+          </tr>
+          <tr>
+            <th style="width: 20%;" class="text-primary">population</th>
+            <td id="ch_let" style="width: 80%;" class="text-primary">&nbsp;</td>
+          </tr>
+          <tr>
+            <th style="width: 20%;" class="text-danger">let_err</th>
+            <td id="er_let" style="width: 80%;" class="text-danger">&nbsp;</td>
+          </tr>
+          <tr>
+            <th style="width: 20%;" class="text-primary">language</th>
+            <td id="ch_var" style="width: 80%;" class="text-primary">&nbsp;</td>
+          </tr>
+          <tr>
+            <th style="width: 20%;" class="text-danger">var_err</th>
+            <td id="er_var" style="width: 80%;" class="text-danger">&nbsp;</td>
+          </tr>
+        </table>
+        <button id="brun15_2" type="button" class="btn btn-primary">Re-assign variables</button>
+      </div>
+    </div>
+    <script>
+      const btnrun15_2 = document.querySelector("#brun15_2");
+      btnrun15_2.onclick = () => {
+        // Declare some variables with 'let', 'const', and 'var'
+        const country = "Vietnam";
+        const continent = "Asia";
+        let population = 100.3;
+        const isIsland = false;
+        var language = "Vietnamese";
+
+        // Try to re-assign some declared variables, see what happens
+        try {
+            isIsland = true;
+            console.log(isIsland);
+            document.getElementById("ch_const").innerHTML = isIsland;
+        } catch(const_err) {
+            console.log(const_err);
+            document.getElementById("er_const").innerHTML = const_err;
+        }
+
+        try {
+            population = 101.4;
+            console.log(population);
+            document.getElementById("ch_let").innerHTML = population;
+        } catch(let_err) {
+            console.log(let_err);
+            document.getElementById("er_let").innerHTML = let_err;
+        }
+
+        try {
+            language = "English";
+            console.log(language);
+            document.getElementById("ch_var").innerHTML = language;
+        } catch(var_err) {
+            console.log(var_err);
+            document.getElementById("er_var").innerHTML = var_err;
+        }
+      };
+    </script>
+  </body>
+</html>
