@@ -1,0 +1,23 @@
+.bg-img1 {
+  background-image: url(./images/lab12-img-0.jpg);
+  height: 80vh;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: contain;
+}
+
+.bg-img2 {
+  background-image: url(./images/lab12-img-1.jpg);
+  height: 80vh;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: contain;
+}
+
+.bg-img3 {
+  background-image: url(./images/lab12-img-2.jpg);
+  height: 80vh;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: contain;
+}
