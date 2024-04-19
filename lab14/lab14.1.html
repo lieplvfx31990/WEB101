@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>lab14.1 - value and variable</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="container mt-3">
+      <h3>Lab 14.1</h3>
+      <div class="container my-3" style="background-color: aquamarine">
+        <p style="font-size: larger; font-weight: bolder">Gia tri va bien.</p>
+        <ol>
+          <li>
+            Khai bao cac bien 'country', 'continent' va 'population' va gan cac
+            gia tri cua chung theo quoc gia cua ban (dan so tinh bang trieu
+            dan).
+          </li>
+          <li>In cac gia tri cua chung ra console.</li>
+        </ol>
+      </div>
+      <br />
+      <h3>Thực hành</h3>
+      <div
+        class="container my-3 py-3 px-3"
+        style="background-color: rgb(218, 218, 218)"
+      >
+        <p style="font-size: larger; font-weight: bolder">
+          Variables Declaration and Assignment
+        </p>
+        <div
+          class="container my-3 py-1 bg-white"
+          style="border-left: solid 4px cyan; font-size: small"
+        >
+          <p>
+            <span style="color: green">// Declare and assign variables</span
+            ><br />
+            <span style="color: blue">let</span> country =
+            <span style="color: brown">"Vietnam"</span>;<br />
+            <span style="color: blue">let</span> continent =
+            <span style="color: brown">"Asia"</span>;<br />
+            <span style="color: blue">let</span> population =
+            <span style="color: red">100.3</span>;
+          </p>
+          <p>
+            <span style="color: green"
+              >// Print the values of variables to the console</span
+            ><br />
+            <span style="color: blue">console</span>.log(country);<br />
+            <span style="color: blue">console</span>.log(continent);<br />
+            <span style="color: blue">console</span>.log(population);<br />
+          </p>
+        </div>
+        <br />
+        <p style="font-size: larger; font-weight: bolder">Kiểm tra kết quả</p>
+        <table class="table table-bordered">
+          <tr>
+            <th style="width: 20%">country</th>
+            <td id="td_country" style="width: 80%">&nbsp;</td>
+          </tr>
+          <tr>
+            <th style="width: 20%">continent</th>
+            <td id="td_continent" style="width: 80%">&nbsp;</td>
+          </tr>
+          <tr>
+            <th style="width: 20%">population</th>
+            <td id="td_population" style="width: 80%">&nbsp;</td>
+          </tr>
+        </table>
+        <button id="btnLogMe" type="button" class="btn btn-primary">
+          Run Lab14.1
+        </button>
+      </div>
+      <script>
+        const btnLog = document.querySelector("#btnLogMe");
+        const pCountry = document.querySelector("#td_country");
+        const pContinent = document.querySelector("#td_continent");
+        const pPopulation = document.querySelector("#td_population");
+        let country = "Vietnam";
+        let continent = "Asia";
+        let population = 100.3;
+
+        btnLogMe.onclick = () => {
+          pCountry.textContent = `${country}`;
+          pContinent.textContent = `${continent}`;
+          pPopulation.textContent = `${population}`;
+          console.log(country);
+          console.log(continent);
+          console.log(population);
+        };
+      </script>
+    </div>
+  </body>
+</html>
